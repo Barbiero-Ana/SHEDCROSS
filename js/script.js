@@ -1,4 +1,4 @@
-// CrossFit Barn - JavaScript Interactions
+// Shed Cross - JavaScript Interactions
 
 document.addEventListener('DOMContentLoaded', function() {
     // Configurações para animações de scroll
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const hero = document.querySelector('.hero');
     window.addEventListener('scroll', () => {
         const scrolled = window.pageYOffset;
-        const rate = scrolled * -0.5;
+        const rate = scrolled * -0.3;
         
         if (hero) {
             hero.style.transform = `translateY(${rate}px)`;
@@ -94,16 +94,20 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Efeito de hover nos cards com delay
-    const cards = document.querySelectorAll('.card, .pricing-card');
+    const cards = document.querySelectorAll('.card, .coach-card, .schedule-card, .contact-item');
     cards.forEach((card, index) => {
         card.style.animationDelay = `${index * 0.1}s`;
         
         card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-15px) scale(1.02)';
+            if (!this.classList.contains('hover-disabled')) {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            }
         });
         
         card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) scale(1)';
+            if (!this.classList.contains('hover-disabled')) {
+                this.style.transform = 'translateY(0) scale(1)';
+            }
         });
     });
 
@@ -111,23 +115,25 @@ document.addEventListener('DOMContentLoaded', function() {
     const logo = document.querySelector('.logo');
     let clickCount = 0;
     
-    logo.addEventListener('click', function(e) {
-        e.preventDefault();
-        clickCount++;
-        
-        this.style.transform = 'scale(1.2) rotate(360deg)';
-        this.style.transition = 'all 0.5s ease';
-        
-        setTimeout(() => {
-            this.style.transform = 'scale(1) rotate(0deg)';
-        }, 500);
-        
-        // Se clicar 5 vezes, adiciona confete (efeito especial)
-        if (clickCount === 5) {
-            createConfetti();
-            clickCount = 0;
-        }
-    });
+    if (logo) {
+        logo.addEventListener('click', function(e) {
+            e.preventDefault();
+            clickCount++;
+            
+            this.style.transform = 'scale(1.2) rotate(360deg)';
+            this.style.transition = 'all 0.5s ease';
+            
+            setTimeout(() => {
+                this.style.transform = 'scale(1) rotate(0deg)';
+            }, 500);
+            
+            // Se clicar 5 vezes, adiciona confete (efeito especial)
+            if (clickCount === 5) {
+                createConfetti();
+                clickCount = 0;
+            }
+        });
+    }
 
     // Função para criar confete (easter egg)
     function createConfetti() {
@@ -157,11 +163,6 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(() => {
             confetti.remove();
         }, 3000);
-    } {
-            confetti.remove();
-        setTimeout(() => {
-            confetti.remove();
-        }, 3000);
     }
 
     // Adicionar animação CSS para confete
@@ -188,7 +189,6 @@ document.addEventListener('DOMContentLoaded', function() {
             background: linear-gradient(135deg, rgba(13, 13, 13, 0.9), rgba(31, 36, 25, 0.7));
         }
     `;
-    document.head.appendChild(style);
     document.head.appendChild(style);
 
     // Validação simples para formulário de contato (se adicionado)
@@ -241,6 +241,69 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 250);
 
     window.addEventListener('resize', handleResize);
+
+    // Animação dos slots de horário
+    const timeSlots = document.querySelectorAll('.time-slot');
+    timeSlots.forEach((slot, index) => {
+        slot.style.animationDelay = `${index * 0.1}s`;
+        
+        slot.addEventListener('click', function() {
+            // Efeito de clique nos horários
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 150);
+        });
+    });
+
+    // Efeito especial para links do WhatsApp
+    const whatsappLinks = document.querySelectorAll('a[href*="wa.me"]');
+    whatsappLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            // Adicionar efeito visual quando clica no WhatsApp
+            const icon = this.querySelector('svg') || this.querySelector('.whatsapp-icon');
+            if (icon) {
+                icon.style.transform = 'scale(1.3)';
+                setTimeout(() => {
+                    icon.style.transform = 'scale(1)';
+                }, 300);
+            }
+        });
+    });
+
+    // Inicializar tooltips para elementos informativos
+    const tooltipElements = document.querySelectorAll('[data-tooltip]');
+    tooltipElements.forEach(element => {
+        element.addEventListener('mouseenter', function() {
+            const tooltip = document.createElement('div');
+            tooltip.className = 'tooltip';
+            tooltip.textContent = this.dataset.tooltip;
+            tooltip.style.cssText = `
+                position: absolute;
+                background: rgba(26, 26, 26, 0.9);
+                color: #C29765;
+                padding: 8px 12px;
+                border-radius: 5px;
+                font-size: 0.9rem;
+                z-index: 10000;
+                pointer-events: none;
+                border: 1px solid #973F1D;
+            `;
+            document.body.appendChild(tooltip);
+            
+            // Posicionar tooltip
+            const rect = this.getBoundingClientRect();
+            tooltip.style.top = `${rect.top - tooltip.offsetHeight - 10}px`;
+            tooltip.style.left = `${rect.left + rect.width / 2 - tooltip.offsetWidth / 2}px`;
+        });
+        
+        element.addEventListener('mouseleave', function() {
+            const tooltip = document.querySelector('.tooltip');
+            if (tooltip) {
+                tooltip.remove();
+            }
+        });
+    });
 });
 
 // Efeito de abertura das portas do celeiro no carregamento
@@ -269,4 +332,20 @@ function toggleDarkMode() {
 // Restaurar preferência de modo escuro
 if (localStorage.getItem('darkMode') === 'true') {
     document.body.classList.add('dark-mode');
+}
+
+// Função utilitária para detectar dispositivo móvel
+function isMobile() {
+    return window.innerWidth <= 768;
+}
+
+// Otimizações específicas para mobile
+if (isMobile()) {
+    // Desabilitar parallax em mobile para melhor performance
+    document.addEventListener('DOMContentLoaded', () => {
+        const hero = document.querySelector('.hero');
+        if (hero) {
+            hero.style.backgroundAttachment = 'scroll';
+        }
+    });
 }
