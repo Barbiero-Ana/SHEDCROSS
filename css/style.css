@@ -24,6 +24,11 @@
     
     /* Fonte personalizada */
     --title-font: 'ShedFont', 'Arial Black', Arial, sans-serif;
+    
+    /* Laranja mais vibrante */
+    --orange-vibrant: #FF6B35;    /* Laranja mais forte */
+    --orange-light: #FF8F65;      /* Laranja claro */
+    --orange-glow: rgba(255, 107, 53, 0.3); /* Para efeitos de brilho */
 }
 
 * {
@@ -97,6 +102,7 @@ header {
     z-index: 1000;
     padding: 15px 0;
     transition: all 0.3s ease;
+    border-bottom: 2px solid var(--primary-rust);
 }
 
 nav {
@@ -158,31 +164,66 @@ nav {
 
 /* Hero Section */
 .hero {
-    height: 100vh;
+    height: 300vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     position: relative;
     background: 
-        linear-gradient(rgba(26, 26, 26, 0.6), rgba(42, 54, 34, 0.4));
+        linear-gradient(rgba(26, 26, 26, 0.7), rgba(42, 54, 34, 0.6)),
+        url('../assets/crossfit-thays-peso.jpg'); /* SUBSTITUA pelo nome da sua imagem */
     background-size: cover;
+    background-position: center;
     background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+/* Overlay adicional para mais controle da opacidade */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.4), rgba(42, 54, 34, 0.3));
+    z-index: 1;
 }
 
 .hero-content {
+    position: relative;
+    z-index: 2;
     max-width: 800px;
     animation: fadeInUp 1.5s ease;
 }
 
 .hero h1 {
     font-family: var(--title-font);
-    font-size: 10rem; /* Aumentado de 4.5rem para 6rem */
+    font-size: 15rem;
     margin-bottom: 20px;
-    color: var(--warm-beige);
     text-shadow: 3px 3px 8px rgba(26, 26, 26, 0.8);
     font-weight: bold;
     letter-spacing: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-word {
+    display: inline-block;
+}
+
+.title-word:nth-child(1) {
+    color: #FFFFFF; /* SHED em branco */
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.9);
+    padding-bottom: -60rem;
+}
+
+.title-word:nth-child(2) {
+    animation-delay: 0.4s;
+    color: var(--orange-vibrant); /* CROSS em laranja */
+    text-shadow: 3px 3px 8px rgba(26, 26, 26, 0.8), 0 0 20px var(--orange-glow);
 }
 
 .hero p {
@@ -197,7 +238,7 @@ nav {
     align-items: center;
     gap: 10px;
     padding: 18px 40px;
-    background: linear-gradient(45deg, var(--primary-rust), var(--rust-light));
+    background: linear-gradient(45deg, var(--orange-vibrant), var(--orange-light));
     color: white;
     text-decoration: none;
     border-radius: 50px;
@@ -205,7 +246,7 @@ nav {
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
-    box-shadow: 0 8px 25px rgba(151, 63, 29, 0.4);
+    box-shadow: 0 8px 25px var(--orange-glow);
     transition: all 0.3s ease;
     animation: pulse 2s infinite;
     border: 2px solid var(--warm-beige);
@@ -213,8 +254,8 @@ nav {
 
 .cta-button:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(151, 63, 29, 0.6);
-    background: linear-gradient(45deg, var(--rust-light), var(--warm-beige));
+    box-shadow: 0 15px 35px rgba(255, 107, 53, 0.6);
+    background: linear-gradient(45deg, var(--orange-light), #FFB347);
     color: var(--dark-black);
     animation: none;
 }
@@ -282,8 +323,9 @@ nav {
     transform: translateX(-50%);
     width: 80px;
     height: 3px;
-    background: linear-gradient(90deg, var(--primary-rust), var(--forest-green));
+    background: linear-gradient(90deg, var(--orange-vibrant), var(--primary-rust));
     border-radius: 2px;
+    box-shadow: 0 0 10px var(--orange-glow);
 }
 
 /* Cards */
@@ -332,17 +374,18 @@ nav {
 
 .card:hover {
     transform: translateY(-10px);
-    border-color: var(--warm-beige);
-    box-shadow: 0 20px 40px rgba(151, 63, 29, 0.3);
+    border-color: var(--orange-vibrant);
+    box-shadow: 0 20px 40px var(--orange-glow);
     background: linear-gradient(135deg, rgba(42, 54, 34, 0.8), rgba(26, 26, 26, 0.6));
 }
 
 .card-icon {
     font-size: 4rem;
-    color: var(--warm-beige);
+    color: var(--orange-light);
     margin-bottom: 20px;
     display: block;
-    text-shadow: 0 0 10px rgba(199, 151, 101, 0.5);
+    text-shadow: 0 0 15px var(--orange-glow);
+    filter: drop-shadow(0 0 10px var(--orange-glow));
 }
 
 .card h3 {
@@ -524,19 +567,21 @@ nav {
 }
 
 .time-slot {
-    background: linear-gradient(45deg, var(--primary-rust), var(--rust-light));
+    background: linear-gradient(45deg, var(--orange-vibrant), var(--orange-light));
     color: white;
     padding: 10px 15px;
     border-radius: 25px;
     font-weight: bold;
     font-size: 0.9rem;
-    box-shadow: 0 2px 10px rgba(151, 63, 29, 0.3);
+    box-shadow: 0 2px 10px var(--orange-glow);
     transition: all 0.3s ease;
+    border: 1px solid var(--orange-light);
 }
 
 .time-slot:hover {
     transform: scale(1.05);
-    box-shadow: 0 4px 15px rgba(151, 63, 29, 0.5);
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.6);
+    background: linear-gradient(45deg, #FF8F65, #FFB347);
 }
 
 /* WhatsApp Button Styles */
@@ -662,7 +707,16 @@ footer::before {
     }
 
     .hero h1 {
-        font-size: 4rem; /* Ajustado para mobile - era 3rem */
+        font-size: 8rem; /* Ajustado para tablet */
+        gap: 1rem;
+    }
+    
+    .title-word:nth-child(1) {
+        color: #FFFFFF; /* SHED continua branco no mobile */
+    }
+    
+    .title-word:nth-child(2) {
+        color: var(--orange-vibrant); /* CROSS continua laranja no mobile */
     }
 
     .hero p {
@@ -732,7 +786,17 @@ footer::before {
 /* Melhorias para telas muito pequenas */
 @media (max-width: 480px) {
     .hero h1 {
-        font-size: 3rem; /* Menor ainda para telas muito pequenas */
+        font-size: 4rem; /* Menor para telas pequenas */
+        flex-direction: column; /* Empilha verticalmente em telas muito pequenas */
+        gap: 0.5rem;
+    }
+    
+    .title-word:nth-child(1) {
+        color: #FFFFFF; /* SHED branco */
+    }
+    
+    .title-word:nth-child(2) {
+        color: var(--orange-vibrant); /* CROSS laranja */
     }
     
     .section {
