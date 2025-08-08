@@ -1,8 +1,7 @@
 /* Importar fonte personalizada */
 @font-face {
-    font-family: 'ShedFont'; /* Substitua pelo nome da sua fonte */
-    src: url('../font/Swansong.otf') format('woff2'),
-         url('../font/Swansong.otf') format('woff'),
+    font-family: 'ShedFont';
+    src: url('../font/Swansong.otf') format('opentype'),
          url('../font/Swansong.otf') format('truetype');
     font-weight: normal;
     font-style: normal;
@@ -11,24 +10,18 @@
 
 /* Paleta de Cores da Empresa */
 :root {
-    --primary-rust: #973F1D;      /* Marrom ferrugem - cor principal */
-    --dark-black: #1A1A1A;       /* Preto escuro - backgrounds */
-    --forest-green: #2A3622;     /* Verde militar - acentos */
-    --warm-beige: #C29765;       /* Bege dourado - destaques */
-    
-    /* Variações para gradientes */
+    --primary-rust: #973F1D;
+    --dark-black: #1A1A1A;
+    --forest-green: #2A3622;
+    --warm-beige: #C29765;
     --rust-light: #B8543A;
     --rust-dark: #7A3218;
     --green-light: #344029;
     --beige-light: #D4A876;
-    
-    /* Fonte personalizada */
     --title-font: 'ShedFont', 'Arial Black', Arial, sans-serif;
-    
-    /* Laranja mais vibrante */
-    --orange-vibrant: #FF6B35;    /* Laranja mais forte */
-    --orange-light: #FF8F65;      /* Laranja claro */
-    --orange-glow: rgba(255, 107, 53, 0.3); /* Para efeitos de brilho */
+    --orange-vibrant: #FF6B35;
+    --orange-light: #FF8F65;
+    --orange-glow: rgba(255, 107, 53, 0.3);
 }
 
 * {
@@ -75,21 +68,9 @@ body {
 }
 
 @keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.05);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-@keyframes woodGrain {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
 }
 
 /* Header */
@@ -112,26 +93,35 @@ nav {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    position: relative;
 }
 
+/* Logo */
 .logo {
-    font-size: 28px;
-    font-weight: bold;
-    color: var(--warm-beige);
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
     transition: all 0.3s ease;
     cursor: pointer;
 }
 
-.logo:hover {
-    color: var(--primary-rust);
-    text-shadow: 0 0 15px rgba(199, 151, 101, 0.5);
+.logo-img {
+    height: 50px;
+    width: auto;
+    transition: all 0.3s ease;
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.7));
 }
 
+.logo:hover .logo-img {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 15px var(--orange-glow)) drop-shadow(2px 2px 4px rgba(0,0,0,0.7));
+}
+
+/* Navlinks centralizadas */
 .nav-links {
     display: flex;
     list-style: none;
     gap: 30px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .nav-links a {
@@ -143,8 +133,911 @@ nav {
 }
 
 .nav-links a:hover {
-    color: var(--warm-beige);
+    color: var(--orange-light);
     transform: translateY(-2px);
+    text-shadow: 1px 1px 3px rgba(26, 26, 26, 0.7);
+    font-weight: bold;
+}
+
+.card p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #f5f5f5;
+}
+
+/* Coach Section - NOVA ESTRUTURA */
+.coach-section {
+    background: linear-gradient(135deg, rgba(42, 54, 34, 0.3), rgba(26, 26, 26, 0.7));
+    padding: 100px 0;
+}
+
+.coach-main-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 60px;
+    align-items: start;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Foto da Coach */
+.coach-photo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.coach-img {
+    width: 280px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 3px solid var(--orange-vibrant);
+    box-shadow: 0 15px 40px var(--orange-glow);
+    transition: all 0.3s ease;
+}
+
+.coach-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 50px rgba(255, 107, 53, 0.6);
+}
+
+.coach-name-card {
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.9), rgba(42, 54, 34, 0.8));
+    border: 2px solid var(--warm-beige);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    max-width: 280px;
+}
+
+.coach-name-card h3 {
+    font-family: var(--title-font);
+    color: var(--warm-beige);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 2px rgba(26, 26, 26, 0.7);
+}
+
+.coach-name-card p {
+    color: #f5f5f5;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.coach-age {
+    color: var(--orange-light);
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* Informações da Coach */
+.coach-details {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.coach-quote {
+    background: linear-gradient(135deg, rgba(151, 63, 29, 0.2), rgba(42, 54, 34, 0.4));
+    border: 2px solid var(--warm-beige);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+}
+
+.coach-quote p {
+    font-style: italic;
+    color: var(--warm-beige);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-shadow: 1px 1px 2px rgba(26, 26, 26, 0.7);
+}
+
+.coach-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.coach-card {
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.8), rgba(42, 54, 34, 0.6));
+    border: 2px solid var(--primary-rust);
+    border-radius: 15px;
+    padding: 25px;
+    transition: all 0.3s ease;
+}
+
+.coach-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--orange-vibrant);
+    box-shadow: 0 15px 30px var(--orange-glow);
+}
+
+.coach-card h4 {
+    font-family: var(--title-font);
+    color: var(--warm-beige);
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 2px rgba(26, 26, 26, 0.7);
+    font-weight: bold;
+}
+
+.coach-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.coach-card li {
+    color: #f5f5f5;
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.coach-card li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--orange-light);
+    font-weight: bold;
+}
+
+/* Schedule Section */
+.schedule-section {
+    padding: 100px 0;
+}
+
+.schedule-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.schedule-card {
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.8), rgba(42, 54, 34, 0.6));
+    border: 2px solid var(--primary-rust);
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    transition: all 0.3s ease;
+    flex: 1;
+    min-width: 350px;
+    max-width: 450px;
+}
+
+.schedule-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--orange-vibrant);
+    box-shadow: 0 15px 30px var(--orange-glow);
+}
+
+.schedule-card h3 {
+    font-family: var(--title-font);
+    color: var(--warm-beige);
+    margin-bottom: 30px;
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 2px rgba(26, 26, 26, 0.7);
+    font-weight: bold;
+}
+
+.schedule-times {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.schedule-grid {
+    display: grid;
+    gap: 30px;
+}
+
+.morning-schedule, .afternoon-schedule {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.schedule-grid h4 {
+    color: var(--warm-beige);
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.time-slot {
+    background: linear-gradient(45deg, var(--orange-vibrant), var(--orange-light));
+    color: white;
+    padding: 10px 15px;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 10px var(--orange-glow);
+    transition: all 0.3s ease;
+    border: 1px solid var(--orange-light);
+}
+
+.time-slot:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.6);
+    background: linear-gradient(45deg, #FF8F65, #FFB347);
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(135deg, var(--dark-black) 0%, var(--forest-green) 100%);
+    padding: 60px 0 30px;
+    text-align: center;
+    border-top: 3px solid var(--primary-rust);
+    position: relative;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--warm-beige), transparent);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-main {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 60px;
+    margin-top: 40px;
+    align-items: start;
+}
+
+/* Footer Navigation - Melhorado para ficar igual à imagem */
+.footer-nav {
+    background: rgba(0, 0, 0, 0.9);
+    border: 2px solid var(--orange-vibrant);
+    border-radius: 15px;
+    padding: 30px;
+    text-align: left;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.footer-nav h3 {
+    color: var(--warm-beige);
+    font-family: var(--title-font);
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 107, 53, 0.2);
+    padding-bottom: 10px;
+}
+
+.footer-links li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: block;
+    padding: 8px 0;
+    position: relative;
+}
+
+.footer-links a:hover {
+    color: var(--orange-light);
+    transform: translateX(15px);
+    text-shadow: 0 0 10px var(--orange-glow);
+}
+
+.footer-links a::before {
+    content: '▶';
+    position: absolute;
+    left: -20px;
+    opacity: 0;
+    color: var(--orange-vibrant);
+    transition: all 0.3s ease;
+    font-size: 0.8rem;
+}
+
+.footer-links a:hover::before {
+    opacity: 1;
+    left: -15px;
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.contact-item {
+    color: #f5f5f5;
+    padding: 25px;
+    background: rgba(26, 26, 26, 0.5);
+    border-radius: 15px;
+    border: 2px solid var(--primary-rust);
+    transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--orange-vibrant);
+    box-shadow: 0 15px 30px var(--orange-glow);
+}
+
+.contact-item h4 {
+    color: var(--warm-beige);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    text-shadow: 1px 1px 2px rgba(26, 26, 26, 0.7);
+    font-family: var(--title-font);
+}
+
+.contact-item a {
+    color: var(--warm-beige);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: var(--orange-vibrant);
+    text-shadow: 0 0 5px var(--orange-glow);
+}
+
+/* Address Section com Google Maps */
+.address-section {
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.9), rgba(42, 54, 34, 0.8));
+    padding: 80px 0 60px;
+    border-top: 3px solid var(--primary-rust);
+}
+
+.address-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.address-info {
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.8), rgba(42, 54, 34, 0.6));
+    border: 2px solid var(--primary-rust);
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.address-info:hover {
+    transform: translateY(-5px);
+    border-color: var(--orange-vibrant);
+    box-shadow: 0 15px 30px var(--orange-glow);
+}
+
+.address-info h3 {
+    font-family: var(--title-font);
+    color: var(--warm-beige);
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    text-shadow: 1px 1px 2px rgba(26, 26, 26, 0.7);
+    font-weight: bold;
+}
+
+.address-info p {
+    color: #f5f5f5;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+}
+
+.address-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background: linear-gradient(45deg, var(--orange-vibrant), var(--orange-light));
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 15px var(--orange-glow);
+    transition: all 0.3s ease;
+    border: 2px solid var(--warm-beige);
+}
+
+.address-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(255, 107, 53, 0.6);
+    background: linear-gradient(45deg, var(--orange-light), #FFB347);
+    color: var(--dark-black);
+}
+
+/* Google Maps Container */
+.map-container {
+    background: linear-gradient(135deg, rgba(42, 54, 34, 0.6), rgba(26, 26, 26, 0.8));
+    border: 2px solid var(--warm-beige);
+    border-radius: 20px;
+    padding: 15px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.map-container:hover {
+    transform: translateY(-5px);
+    border-color: var(--orange-vibrant);
+    box-shadow: 0 15px 30px var(--orange-glow);
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 300px;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+/* WhatsApp Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.whatsapp-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(45deg, #25D366, #128C7E);
+    color: white;
+    padding: 15px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+    transition: all 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
+}
+
+.whatsapp-btn svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Responsivo */
+@media (max-width: 1200px) {
+    .cards-container {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 800px;
+    }
+    
+    .nav-links {
+        position: static;
+        transform: none;
+    }
+    
+    nav {
+        justify-content: center;
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    nav {
+        justify-content: center;
+        flex-direction: row;
+    }
+
+    .logo-img {
+        height: 40px;
+    }
+
+    .hero h1 {
+        font-size: 8rem;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+    
+    .title-word:nth-child(1) {
+        color: #FFFFFF;
+        text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.9);
+        flex-wrap: wrap;
+    }
+    
+    .title-word:nth-child(2) {
+        color: var(--orange-vibrant);
+        text-shadow: 3px 3px 8px rgba(26, 26, 26, 0.8), 0 0 20px var(--orange-glow);
+        flex-wrap: wrap;
+    }
+    
+    .hero p {
+        font-size: 1.2rem;
+        padding: 0 20px;
+    }
+
+    .section h2 {
+        font-size: 2.5rem;
+    }
+
+    .cards-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .card {
+        max-width: 100%;
+        padding: 25px;
+    }
+
+    /* Coach Section Mobile */
+    .coach-main-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .coach-img {
+        width: 250px;
+        height: 300px;
+    }
+
+    .coach-info-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .schedule-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .schedule-card {
+        max-width: 100%;
+        min-width: auto;
+    }
+    
+    .schedule-times {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-main {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .footer-nav {
+        text-align: center;
+        margin: 0 auto;
+        max-width: 300px;
+    }
+
+    .footer-nav h3 {
+        font-size: 1.5rem;
+    }
+
+    .address-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .whatsapp-btn span {
+        display: none;
+    }
+    
+    .cta-button {
+        padding: 15px 30px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 4rem;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .title-word:nth-child(1) {
+        color: #FFFFFF;
+        text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.9);
+    }
+    
+    .title-word:nth-child(2) {
+        color: var(--orange-vibrant);
+        text-shadow: 3px 3px 8px rgba(26, 26, 26, 0.8), 0 0 20px var(--orange-glow);
+    }
+    
+    .section {
+        padding: 80px 15px;
+    }
+    
+    .coach-card, .schedule-card, .card, .address-info {
+        padding: 20px;
+    }
+    
+    .contact-item {
+        padding: 20px;
+    }
+
+    .coach-img {
+        width: 200px;
+        height: 250px;
+    }
+
+    .footer-nav {
+        padding: 20px;
+        max-width: 280px;
+    }
+
+    .footer-nav h3 {
+        font-size: 1.3rem;
+    }
+
+    .footer-links a {
+        font-size: 1rem;
+    }
+}
+
+/* Animações de scroll */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+}
+
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Estilos adicionais para melhor acessibilidade */
+*:focus {
+    outline: 2px solid var(--warm-beige);
+    outline-offset: 2px;
+}
+
+/* Smooth transitions globais */
+* {
+    transition: color 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+}
+
+/* Loading state */
+.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+/* Barn Elements */
+.barn-doors {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+}
+
+.barn-door {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background: 
+        linear-gradient(90deg, var(--primary-rust) 0%, var(--forest-green) 50%, var(--primary-rust) 100%);
+    transition: transform 2s ease;
+}
+
+.barn-door.left {
+    left: 0;
+    transform: translateX(-100%);
+}
+
+.barn-door.right {
+    right: 0;
+    transform: translateX(100%);
+}
+
+/* WhatsApp Icon */
+.whatsapp-icon {
+    font-size: 1.1rem;
+}
+
+/* Animações adicionais */
+@keyframes woodGrain {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Estados de foco melhorados */
+.nav-links a:focus,
+.footer-links a:focus,
+.cta-button:focus,
+.address-button:focus,
+.whatsapp-btn:focus {
+    outline: 3px solid var(--orange-vibrant);
+    outline-offset: 3px;
+    border-radius: 5px;
+}
+
+/* Melhorias de performance */
+.card,
+.coach-card,
+.schedule-card,
+.contact-item,
+.address-info,
+.map-container {
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+/* Efeitos de parallax suaves */
+.hero {
+    will-change: transform;
+}
+
+/* Otimizações para mobile */
+@media (max-width: 768px) {
+    .hero {
+        background-attachment: scroll;
+    }
+    
+    .card::before,
+    .coach-card::before {
+        display: none;
+    }
+}
+
+/* Estados de carregamento para imagens */
+.coach-img,
+.logo-img {
+    transition: opacity 0.3s ease;
+}
+
+.coach-img[src=""],
+.logo-img[src=""] {
+    opacity: 0;
+}
+
+/* Melhorias de contraste para acessibilidade */
+@media (prefers-contrast: high) {
+    :root {
+        --orange-vibrant: #FF4500;
+        --warm-beige: #FFD700;
+    }
+    
+    .nav-links a,
+    .footer-links a {
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    }
+}
+
+/* Redução de movimento para usuários sensíveis */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .hero {
+        background-attachment: scroll;
+    }
+}
+
+/* Print styles */
+@media print {
+    .whatsapp-float,
+    .barn-doors,
+    header {
+        display: none !important;
+    }
+    
+    body {
+        background: white !important;
+        color: black !important;
+    }
+    
+    .section h2 {
+        color: black !important;
+    }
+}
+
+/* Modo escuro adicional */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --dark-black: #0A0A0A;
+        --forest-green: #1A2415;
+    }
+}
+
+/* Hover states para touch devices */
+@media (hover: none) and (pointer: coarse) {
+    .card:hover,
+    .coach-card:hover,
+    .schedule-card:hover,
+    .contact-item:hover,
+    .address-info:hover {
+        transform: none;
+    }
+    
+    .nav-links a:hover,
+    .footer-links a:hover {
+        transform: none;
+    }
+}
+
+/* Melhorias de tipografia */
+.section p,
+.coach-card li,
+.contact-item p {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Container queries para layouts flexíveis */
+@container (max-width: 600px) {
+    .coach-info-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Última verificação de completude */
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Garantir que todos os elementos importantes estão incluídos */
+.hero-content,
+.cards-container,
+.coach-main-content,
+.schedule-container,
+.footer-content,
+.address-content {
+    position: relative;
+    z-index: 2;
+} 0 0 8px var(--orange-glow);
 }
 
 .nav-links a::after {
@@ -154,8 +1047,9 @@ nav {
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--primary-rust);
+    background: var(--orange-vibrant);
     transition: width 0.3s ease;
+    box-shadow: 0 0 5px var(--orange-glow);
 }
 
 .nav-links a:hover::after {
@@ -164,7 +1058,7 @@ nav {
 
 /* Hero Section */
 .hero {
-    height: 300vh;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -172,14 +1066,13 @@ nav {
     position: relative;
     background: 
         linear-gradient(rgba(26, 26, 26, 0.7), rgba(42, 54, 34, 0.6)),
-        url('../assets/crossfit-thays-peso.jpg'); /* SUBSTITUA pelo nome da sua imagem */
+        url('../assets/crossfit-thays-peso.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
 }
 
-/* Overlay adicional para mais controle da opacidade */
 .hero::before {
     content: '';
     position: absolute;
@@ -202,12 +1095,14 @@ nav {
     font-family: var(--title-font);
     font-size: 15rem;
     margin-bottom: 20px;
+    padding: 10px;
     text-shadow: 3px 3px 8px rgba(26, 26, 26, 0.8);
     font-weight: bold;
     letter-spacing: 2px;
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 2rem;
 }
 
 .title-word {
@@ -215,20 +1110,24 @@ nav {
 }
 
 .title-word:nth-child(1) {
-    color: #FFFFFF; /* SHED em branco */
-    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.9);
-    padding-bottom: -60rem;
+    animation-delay: 0.2s;
+    color: #FFFFFF;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.9), 
+                 0 0 20px rgba(255, 255, 255, 0.3);
 }
 
 .title-word:nth-child(2) {
     animation-delay: 0.4s;
-    color: var(--orange-vibrant); /* CROSS em laranja */
-    text-shadow: 3px 3px 8px rgba(26, 26, 26, 0.8), 0 0 20px var(--orange-glow);
+    color: var(--orange-vibrant);
+    text-shadow: 3px 3px 8px rgba(26, 26, 26, 0.8), 
+                 0 0 20px var(--orange-glow),
+                 0 0 40px var(--orange-glow);
 }
 
 .hero p {
-    font-size: 1.5rem;
-    margin-bottom: 40px;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    margin-top: -30px;
     color: #f5f5f5;
     text-shadow: 2px 2px 4px rgba(26, 26, 26, 0.7);
 }
@@ -248,7 +1147,6 @@ nav {
     letter-spacing: 1px;
     box-shadow: 0 8px 25px var(--orange-glow);
     transition: all 0.3s ease;
-    animation: pulse 2s infinite;
     border: 2px solid var(--warm-beige);
 }
 
@@ -257,11 +1155,6 @@ nav {
     box-shadow: 0 15px 35px rgba(255, 107, 53, 0.6);
     background: linear-gradient(45deg, var(--orange-light), #FFB347);
     color: var(--dark-black);
-    animation: none;
-}
-
-.whatsapp-icon {
-    font-size: 1.1rem;
 }
 
 /* Barn Elements */
@@ -308,7 +1201,7 @@ nav {
     font-size: 3rem;
     text-align: center;
     margin-bottom: 60px;
-    color: var(--warm-beige);
+    color: #FFFFFF;
     text-shadow: 2px 2px 6px rgba(26, 26, 26, 0.7);
     position: relative;
     font-weight: bold;
@@ -330,13 +1223,11 @@ nav {
 
 /* Cards */
 .cards-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: stretch;
-    gap: 40px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
     margin-top: 60px;
-    max-width: 1200px;
+    max-width: 1400px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -345,15 +1236,13 @@ nav {
     background: linear-gradient(135deg, rgba(26, 26, 26, 0.8), rgba(42, 54, 34, 0.6));
     border: 2px solid var(--primary-rust);
     border-radius: 15px;
-    padding: 40px;
+    padding: 30px;
     text-align: center;
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
-    flex: 1;
-    min-width: 280px;
-    max-width: 350px;
+    height: 100%;
 }
 
 .card::before {
@@ -380,9 +1269,9 @@ nav {
 }
 
 .card-icon {
-    font-size: 4rem;
+    font-size: 3.5rem;
     color: var(--orange-light);
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     display: block;
     text-shadow: 0 0 15px var(--orange-glow);
     filter: drop-shadow(0 0 10px var(--orange-glow));
@@ -390,436 +1279,7 @@ nav {
 
 .card h3 {
     font-family: var(--title-font);
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-    color: var(--warm-beige);
-    text-shadow: 1px 1px 3px rgba(26, 26, 26, 0.7);
-    font-weight: bold;
-}
-
-.coach-card h3 {
-    font-family: var(--title-font);
-    color: var(--warm-beige);
-    margin-bottom: 20px;
-    font-size: 1.3rem;
-    text-shadow: 1px 1px 2px rgba(26, 26, 26, 0.7);
-    font-weight: bold;
-}
-
-.schedule-card h3 {
-    font-family: var(--title-font);
-    color: var(--warm-beige);
-    margin-bottom: 30px;
-    font-size: 1.5rem;
-    text-shadow: 1px 1px 2px rgba(26, 26, 26, 0.7);
-    font-weight: bold;
-}
-
-.card p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: #f5f5f5;
-}
-
-/* Coach Section */
-.coach-section {
-    background: linear-gradient(135deg, rgba(42, 54, 34, 0.3), rgba(26, 26, 26, 0.7));
-    padding: 100px 0;
-}
-
-.coach-content {
-    display: grid;
-    gap: 40px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.coach-info {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: stretch;
-    gap: 30px;
-    margin-bottom: 40px;
-}
-
-.coach-card {
-    background: linear-gradient(135deg, rgba(26, 26, 26, 0.8), rgba(42, 54, 34, 0.6));
-    border: 2px solid var(--primary-rust);
-    border-radius: 15px;
-    padding: 30px;
-    transition: all 0.3s ease;
-    flex: 1;
-    min-width: 280px;
-    max-width: 350px;
-}
-
-.coach-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--warm-beige);
-    box-shadow: 0 15px 30px rgba(151, 63, 29, 0.3);
-}
-
-.coach-card h3 {
-    color: var(--warm-beige);
-    margin-bottom: 20px;
-    font-size: 1.3rem;
-    text-shadow: 1px 1px 2px rgba(26, 26, 26, 0.7);
-}
-
-.coach-card ul {
-    list-style: none;
-    padding: 0;
-}
-
-.coach-card li {
-    color: #f5f5f5;
-    margin-bottom: 10px;
-    padding-left: 20px;
-    position: relative;
-}
-
-.coach-card li::before {
-    content: '✓';
-    position: absolute;
-    left: 0;
-    color: var(--warm-beige);
-    font-weight: bold;
-}
-
-.coach-bio {
-    background: linear-gradient(135deg, rgba(151, 63, 29, 0.2), rgba(42, 54, 34, 0.4));
-    border: 2px solid var(--warm-beige);
-    border-radius: 20px;
-    padding: 40px;
-    text-align: center;
-}
-
-.coach-bio p {
-    color: #f5f5f5;
-    line-height: 1.6;
+    font-size: 1.4rem;
     margin-bottom: 15px;
-}
-
-/* Schedule Section */
-.schedule-section {
-    padding: 100px 0;
-}
-
-.schedule-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: stretch;
-    gap: 40px;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.schedule-card {
-    background: linear-gradient(135deg, rgba(26, 26, 26, 0.8), rgba(42, 54, 34, 0.6));
-    border: 2px solid var(--primary-rust);
-    border-radius: 20px;
-    padding: 40px;
-    text-align: center;
-    transition: all 0.3s ease;
-    flex: 1;
-    min-width: 350px;
-    max-width: 450px;
-}
-
-.schedule-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--warm-beige);
-    box-shadow: 0 15px 30px rgba(151, 63, 29, 0.3);
-}
-
-.schedule-card h3 {
     color: var(--warm-beige);
-    margin-bottom: 30px;
-    font-size: 1.5rem;
-    text-shadow: 1px 1px 2px rgba(26, 26, 26, 0.7);
-}
-
-.schedule-times {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    justify-content: center;
-}
-
-.schedule-grid {
-    display: grid;
-    gap: 30px;
-}
-
-.morning-schedule, .afternoon-schedule {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.schedule-grid h4 {
-    color: var(--warm-beige);
-    margin-bottom: 15px;
-    font-size: 1.1rem;
-}
-
-.time-slot {
-    background: linear-gradient(45deg, var(--orange-vibrant), var(--orange-light));
-    color: white;
-    padding: 10px 15px;
-    border-radius: 25px;
-    font-weight: bold;
-    font-size: 0.9rem;
-    box-shadow: 0 2px 10px var(--orange-glow);
-    transition: all 0.3s ease;
-    border: 1px solid var(--orange-light);
-}
-
-.time-slot:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.6);
-    background: linear-gradient(45deg, #FF8F65, #FFB347);
-}
-
-/* WhatsApp Button Styles */
-.whatsapp-float {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1000;
-}
-
-.whatsapp-btn {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background: linear-gradient(45deg, #25D366, #128C7E);
-    color: white;
-    padding: 15px 20px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: bold;
-    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
-    transition: all 0.3s ease;
-    animation: pulse 2s infinite;
-}
-
-.whatsapp-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
-    animation: none;
-}
-
-.whatsapp-btn svg {
-    width: 24px;
-    height: 24px;
-}
-
-/* Footer */
-footer {
-    background: linear-gradient(135deg, var(--dark-black) 0%, var(--forest-green) 100%);
-    padding: 60px 0 30px;
-    text-align: center;
-    border-top: 3px solid var(--primary-rust);
-    position: relative;
-}
-
-footer::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--warm-beige), transparent);
-}
-
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.contact-info {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
-    margin-bottom: 40px;
-}
-
-.contact-item {
-    color: #f5f5f5;
-    padding: 20px;
-    background: rgba(26, 26, 26, 0.5);
-    border-radius: 10px;
-    border: 1px solid var(--primary-rust);
-    transition: all 0.3s ease;
-}
-
-.contact-item:hover {
-    transform: translateY(-5px);
-    border-color: var(--warm-beige);
-    box-shadow: 0 10px 20px rgba(151, 63, 29, 0.3);
-}
-
-.contact-item h4 {
-    color: var(--warm-beige);
-    margin-bottom: 10px;
-    font-size: 1.3rem;
-    text-shadow: 1px 1px 2px rgba(26, 26, 26, 0.7);
-}
-
-.contact-item a {
-    color: var(--warm-beige);
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.contact-item a:hover {
-    color: var(--primary-rust);
-    text-shadow: 0 0 5px rgba(199, 151, 101, 0.5);
-}
-
-/* Estilos adicionais para melhor acessibilidade */
-*:focus {
-    outline: 2px solid var(--warm-beige);
-    outline-offset: 2px;
-}
-
-/* Smooth transitions globais */
-* {
-    transition: color 0.3s ease, background 0.3s ease, border-color 0.3s ease;
-}
-
-/* Loading state */
-.loading {
-    opacity: 0.7;
-    pointer-events: none;
-}
-
-/* Responsivo */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-    }
-
-    .hero h1 {
-        font-size: 8rem; /* Ajustado para tablet */
-        gap: 1rem;
-    }
-    
-    .title-word:nth-child(1) {
-        color: #FFFFFF; /* SHED continua branco no mobile */
-    }
-    
-    .title-word:nth-child(2) {
-        color: var(--orange-vibrant); /* CROSS continua laranja no mobile */
-    }
-
-    .hero p {
-        font-size: 1.2rem;
-        padding: 0 20px;
-    }
-
-    .section h2 {
-        font-size: 2.5rem;
-    }
-
-    .cards-container {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .card {
-        max-width: 100%;
-        min-width: auto;
-    }
-    
-    .coach-info {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .coach-card {
-        max-width: 100%;
-        min-width: auto;
-    }
-    
-    .schedule-container {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .schedule-card {
-        max-width: 100%;
-        min-width: auto;
-    }
-    
-    .schedule-times {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .whatsapp-float {
-        bottom: 15px;
-        right: 15px;
-    }
-    
-    .whatsapp-btn {
-        padding: 12px 16px;
-        font-size: 0.9rem;
-    }
-    
-    .whatsapp-btn span {
-        display: none;
-    }
-    
-    .cta-button {
-        padding: 15px 30px;
-        font-size: 1rem;
-    }
-}
-
-/* Melhorias para telas muito pequenas */
-@media (max-width: 480px) {
-    .hero h1 {
-        font-size: 4rem; /* Menor para telas pequenas */
-        flex-direction: column; /* Empilha verticalmente em telas muito pequenas */
-        gap: 0.5rem;
-    }
-    
-    .title-word:nth-child(1) {
-        color: #FFFFFF; /* SHED branco */
-    }
-    
-    .title-word:nth-child(2) {
-        color: var(--orange-vibrant); /* CROSS laranja */
-    }
-    
-    .section {
-        padding: 80px 15px;
-    }
-    
-    .coach-card, .schedule-card, .card {
-        padding: 25px;
-    }
-    
-    .contact-item {
-        padding: 15px;
-    }
-}
-
-/* Animações de scroll */
-.fade-in-up {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 0.8s ease;
-}
-
-.fade-in-up.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
+    text-shadow:

@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Efeito de hover nos cards com delay
-    const cards = document.querySelectorAll('.card, .coach-card, .schedule-card, .contact-item');
+    const cards = document.querySelectorAll('.card, .coach-card, .schedule-card, .contact-item, .address-info');
     cards.forEach((card, index) => {
         card.style.animationDelay = `${index * 0.1}s`;
         
@@ -113,18 +113,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Easter egg: Efeito especial ao clicar no logo
     const logo = document.querySelector('.logo');
+    const logoImg = document.querySelector('.logo-img');
     let clickCount = 0;
     
-    if (logo) {
+    if (logo && logoImg) {
         logo.addEventListener('click', function(e) {
             e.preventDefault();
             clickCount++;
             
-            this.style.transform = 'scale(1.2) rotate(360deg)';
-            this.style.transition = 'all 0.5s ease';
+            logoImg.style.transform = 'scale(1.3) rotate(360deg)';
+            logoImg.style.transition = 'all 0.5s ease';
             
             setTimeout(() => {
-                this.style.transform = 'scale(1) rotate(0deg)';
+                logoImg.style.transform = 'scale(1) rotate(0deg)';
             }, 500);
             
             // Se clicar 5 vezes, adiciona confete (efeito especial)
@@ -144,7 +145,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function createConfettiPiece() {
         const confetti = document.createElement('div');
-        const colors = ['#973F1D', '#C29765', '#2A3622', '#B8543A']; // Cores da empresa
+        const colors = ['#973F1D', '#C29765', '#2A3622', '#B8543A', '#FF6B35']; // Cores da empresa
         confetti.style.cssText = `
             position: fixed;
             top: -10px;
@@ -271,6 +272,18 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Efeito especial para o botão de endereço
+    const addressButton = document.querySelector('.address-button');
+    if (addressButton) {
+        addressButton.addEventListener('click', function() {
+            // Adicionar feedback visual
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 150);
+        });
+    }
+
     // Inicializar tooltips para elementos informativos
     const tooltipElements = document.querySelectorAll('[data-tooltip]');
     tooltipElements.forEach(element => {
@@ -304,6 +317,23 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // Animação especial para a seção de endereço
+    const addressSection = document.querySelector('.address-section');
+    if (addressSection) {
+        const addressObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const mapPlaceholder = entry.target.querySelector('.map-placeholder');
+                    if (mapPlaceholder) {
+                        mapPlaceholder.style.animation = 'bounceIn 1s ease forwards';
+                    }
+                }
+            });
+        }, { threshold: 0.3 });
+        
+        addressObserver.observe(addressSection);
+    }
 });
 
 // Efeito de abertura das portas do celeiro no carregamento
@@ -349,3 +379,25 @@ if (isMobile()) {
         }
     });
 }
+
+// Função para animar elementos quando entram na tela
+function animateOnScroll() {
+    const elements = document.querySelectorAll('.card, .coach-card, .schedule-card');
+    elements.forEach((element, index) => {
+        const rect = element.getBoundingClientRect();
+        const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+        
+        if (isVisible && !element.classList.contains('animated')) {
+            setTimeout(() => {
+                element.style.animation = 'fadeInUp 0.6s ease forwards';
+                element.classList.add('animated');
+            }, index * 100);
+        }
+    });
+}
+
+// Adicionar listener para scroll
+window.addEventListener('scroll', debounce(animateOnScroll, 100));
+
+// Executar uma vez no carregamento
+document.addEventListener('DOMContentLoaded', animateOnScroll);
