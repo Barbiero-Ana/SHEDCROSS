@@ -2,7 +2,7 @@
 @font-face {
     font-family: 'ShedFont';
     src: url('../font/Swansong.otf') format('opentype'),
-         url('../font/Swansong.otf') format('truetype');
+        url('../font/Swansong.otf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -30,11 +30,15 @@
     box-sizing: border-box;
 }
 
+html {
+    overflow-x: auto;
+}
+
 body {
     font-family: 'Arial', sans-serif;
     background: linear-gradient(135deg, var(--dark-black) 0%, var(--forest-green) 100%);
     color: #fff;
-    overflow-x: hidden;
+    overflow-x: auto;
 }
 
 /* Animações */
@@ -88,7 +92,7 @@ header {
 
 nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
@@ -148,7 +152,8 @@ nav {
 /* Coach Section - NOVA ESTRUTURA */
 .coach-section {
     background: linear-gradient(135deg, rgba(42, 54, 34, 0.3), rgba(26, 26, 26, 0.7));
-    padding: 100px 0;
+    padding: 120px 0;
+    overflow: visible;
 }
 
 .coach-main-content {
@@ -158,6 +163,8 @@ nav {
     align-items: start;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 40px;
+    overflow: visible;
 }
 
 /* Foto da Coach */
@@ -239,7 +246,9 @@ nav {
 .coach-info-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
+    gap: 35px;
+    padding: 20px 0;
+    overflow: visible;
 }
 
 .coach-card {
@@ -287,7 +296,8 @@ nav {
 
 /* Schedule Section */
 .schedule-section {
-    padding: 100px 0;
+    padding: 120px 0;
+    overflow: visible;
 }
 
 .schedule-container {
@@ -298,7 +308,8 @@ nav {
     gap: 40px;
     max-width: 1000px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 40px 40px;
+    overflow: visible;
 }
 
 .schedule-card {
@@ -373,10 +384,11 @@ nav {
 /* Footer */
 footer {
     background: linear-gradient(135deg, var(--dark-black) 0%, var(--forest-green) 100%);
-    padding: 60px 0 30px;
+    padding: 80px 0 30px;
     text-align: center;
     border-top: 3px solid var(--primary-rust);
     position: relative;
+    overflow: visible;
 }
 
 footer::before {
@@ -392,7 +404,8 @@ footer::before {
 .footer-content {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 40px;
+    overflow: visible;
 }
 
 .footer-main {
@@ -475,7 +488,9 @@ footer::before {
 .contact-info {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
+    gap: 40px;
+    padding: 20px 0;
+    overflow: visible;
 }
 
 .contact-item {
@@ -515,8 +530,9 @@ footer::before {
 /* Address Section com Google Maps */
 .address-section {
     background: linear-gradient(135deg, rgba(26, 26, 26, 0.9), rgba(42, 54, 34, 0.8));
-    padding: 80px 0 60px;
+    padding: 100px 0 60px;
     border-top: 3px solid var(--primary-rust);
+    overflow: visible;
 }
 
 .address-content {
@@ -526,6 +542,8 @@ footer::before {
     align-items: center;
     max-width: 1000px;
     margin: 0 auto;
+    padding: 0 40px;
+    overflow: visible;
 }
 
 .address-info {
@@ -919,6 +937,10 @@ footer::before {
         background-attachment: scroll;
     }
     
+    #sobre {
+        background-attachment: scroll;
+    }
+    
     .card::before,
     .coach-card::before {
         display: none;
@@ -1037,8 +1059,7 @@ footer::before {
 .address-content {
     position: relative;
     z-index: 2;
-} 0 0 8px var(--orange-glow);
-}
+} 
 
 .nav-links a::after {
     content: '';
@@ -1194,6 +1215,45 @@ footer::before {
     margin: 0 auto;
     padding-left: 20px;
     padding-right: 20px;
+    overflow: visible;
+}
+
+/* Seção Sobre com background fixo */
+#sobre {
+    position: relative;
+    background: 
+        linear-gradient(rgba(26, 26, 26, 0.8), rgba(42, 54, 34, 0.7)),
+        url('../assets/crossfit-thays-peso.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    padding: 120px 0;
+    margin: 0;
+    max-width: 100%;
+}
+
+#sobre::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.6), rgba(42, 54, 34, 0.4));
+    z-index: 1;
+}
+
+#sobre .fade-in-up,
+#sobre h2 {
+    position: relative;
+    z-index: 2;
+}
+
+/* Seção modalidades com overflow visível */
+#modalidades {
+    overflow: visible;
+    padding: 120px 0;
 }
 
 .section h2 {
@@ -1225,11 +1285,13 @@ footer::before {
 .cards-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
+    gap: 50px;
     margin-top: 60px;
-    max-width: 1400px;
+    max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
+    padding: 60px 40px;
+    overflow: visible;
 }
 
 .card {
@@ -1241,24 +1303,27 @@ footer::before {
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     height: 100%;
+    z-index: 1;
 }
 
 .card::before {
     content: '';
     position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(45deg, transparent, rgba(199, 151, 101, 0.1), transparent);
-    transform: rotate(-45deg);
-    transition: transform 0.6s ease;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 107, 53, 0.05), rgba(199, 151, 101, 0.05));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 15px;
+    z-index: 1;
 }
 
 .card:hover::before {
-    transform: rotate(-45deg) translate(50%, 50%);
+    opacity: 1;
 }
 
 .card:hover {
@@ -1271,10 +1336,21 @@ footer::before {
 .card-icon {
     font-size: 3.5rem;
     color: var(--orange-light);
-    margin-bottom: 15px;
+    margin: 20px 0 25px 0;
     display: block;
     text-shadow: 0 0 15px var(--orange-glow);
     filter: drop-shadow(0 0 10px var(--orange-glow));
+    transition: all 0.3s ease;
+    transform: translateZ(0);
+    position: relative;
+    z-index: 5;
+    padding: 10px;
+}
+
+.card:hover .card-icon {
+    transform: scale(1.05) translateZ(0);
+    filter: drop-shadow(0 0 20px var(--orange-glow)) drop-shadow(0 0 30px rgba(255, 107, 53, 0.5));
+    text-shadow: 0 0 25px var(--orange-glow);
 }
 
 .card h3 {
@@ -1282,4 +1358,270 @@ footer::before {
     font-size: 1.4rem;
     margin-bottom: 15px;
     color: var(--warm-beige);
-    text-shadow:
+    text-shadow: 1px 1px 2px rgba(26, 26, 26, 0.7);
+    font-weight: bold;
+    position: relative;
+    z-index: 3;
+}
+
+.card p {
+    color: #f5f5f5;
+    line-height: 1.6;
+    font-size: 1rem;
+    position: relative;
+    z-index: 3;
+}
+
+/* Modal Button */
+.modal-btn {
+    background: linear-gradient(45deg, var(--orange-vibrant), var(--orange-light));
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px var(--orange-glow);
+    margin-top: 15px;
+}
+
+.modal-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 107, 53, 0.6);
+    background: linear-gradient(45deg, var(--orange-light), #FFB347);
+}
+
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: linear-gradient(135deg, var(--dark-black), var(--forest-green));
+    border: 3px solid var(--orange-vibrant);
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    transform: scale(0.7);
+    transition: transform 0.3s ease;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+}
+
+.modal-overlay.active .modal-content {
+    transform: scale(1);
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2rem;
+    color: var(--orange-vibrant);
+    cursor: pointer;
+    background: none;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.modal-close:hover {
+    color: var(--orange-light);
+    transform: scale(1.2);
+}
+
+.modal-content h3 {
+    font-family: var(--title-font);
+    color: var(--warm-beige);
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.modal-content p {
+    color: #f5f5f5;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+}
+
+.modal-content ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin: 20px 0;
+}
+
+.modal-content li {
+    color: #f5f5f5;
+    margin-bottom: 10px;
+    padding-left: 25px;
+    position: relative;
+    line-height: 1.5;
+}
+
+.modal-content li::before {
+    content: '🔥';
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Menu Mobile */
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+    background: none;
+    border: none;
+    z-index: 1001;
+}
+
+.mobile-menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: var(--orange-vibrant);
+    margin: 3px 0;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.mobile-nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.98), rgba(42, 54, 34, 0.95));
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 80px 20px 20px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.mobile-nav.active {
+    transform: translateX(0);
+}
+
+.mobile-nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.mobile-nav-links li {
+    margin: 30px 0;
+}
+
+.mobile-nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: block;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.mobile-nav-links a:hover {
+    color: var(--orange-vibrant);
+    background: rgba(255, 107, 53, 0.1);
+    transform: translateX(10px);
+}
+
+/* Responsivo para Menu Mobile */
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: flex;
+    }
+    
+    .nav-links {
+        display: none;
+    }
+    
+    .mobile-nav {
+        display: block;
+    }
+}
+
+/* Scroll suave */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Melhorias de acessibilidade para leitores de tela */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Estados de loading para imagens */
+img {
+    transition: opacity 0.3s ease;
+}
+
+img[src=""] {
+    opacity: 0;
+}
+
+/* Melhorias para performance */
+.hero,
+.cards-container,
+.coach-main-content,
+.schedule-container {
+    contain: layout style paint;
+}
+
+/* Otimizações finais */
+.hero-content,
+.card,
+.coach-card,
+.schedule-card {
+    transform: translateZ(0);
+    will-change: transform;
+}
