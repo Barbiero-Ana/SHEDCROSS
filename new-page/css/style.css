@@ -852,7 +852,7 @@ h1, h2, h3, h4, h5,
     -webkit-box-flex: 0;
     -ms-flex: 0 0 120px;
     flex: 0 0 120px;
-    background-color: #993516;
+    background-color: #2A3622;
     border-radius: 4px;
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
@@ -876,7 +876,8 @@ h1, h2, h3, h4, h5,
       font-size: 16px; }
   .class-item:hover {
     z-index: 2;
-    background: #993516; }
+    background: #2A3622; }
+    .class-item:hover h2,
     .class-item:hover h2 a {
       color: #fff; }
     .class-item:hover p, .class-item:hover span {
@@ -1241,4 +1242,382 @@ h1, .heading {
   height: 70px;
   display: inline-block;
   vertical-align: middle;
+}
+
+/* ===================
+   SCHEDULE GRID STYLES
+   =================== */
+
+.schedule-grid {
+  margin-bottom: 40px;
+}
+
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.schedule-table thead {
+  background: #2A3622;
+}
+
+.schedule-table thead th {
+  color: white;
+  font-weight: 600;
+  padding: 20px 15px;
+  text-align: center;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border: none;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.schedule-table thead th.time-column {
+  background: #1A1A1A;
+  width: 100px;
+  min-width: 80px;
+}
+
+.schedule-table tbody tr {
+  transition: all 0.3s ease;
+}
+
+.schedule-table tbody tr:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(151, 63, 29, 0.2);
+}
+
+.schedule-table tbody tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.schedule-table td {
+  padding: 15px;
+  text-align: center;
+  border: 1px solid #e9ecef;
+  vertical-align: middle;
+}
+
+.time-slot {
+  background: #1A1A1A;
+  color: #C29765;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  width: 100px;
+  min-width: 80px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.class-slot {
+  position: relative;
+  min-height: 70px;
+  padding: 12px 8px;
+}
+
+.class-slot.crossfit {
+  background: #973F1D;
+  border: 2px solid #973F1D;
+  color: white;
+}
+
+.class-slot.kids {
+  background: #973F1D;
+  border: 2px solid #973F1D;
+  color: white;
+}
+
+.class-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.class-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+  line-height: 1.2;
+}
+
+.class-coach {
+  font-size: 0.8rem;
+  opacity: 0.9;
+  font-style: italic;
+}
+
+.empty-slot {
+  background: #f8f9fa;
+  color: #1A1A1A;
+  font-size: 1.5rem;
+  font-weight: 300;
+  opacity: 0.6;
+}
+
+/* Hover effects para as classes */
+.class-slot:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  position: relative;
+}
+
+/* Responsividade da grade */
+@media (max-width: 992px) {
+  .schedule-table thead th,
+  .schedule-table td {
+    padding: 12px 8px;
+    font-size: 0.9rem;
+  }
+  
+  .class-name {
+    font-size: 0.85rem;
+  }
+  
+  .class-coach {
+    font-size: 0.75rem;
+  }
+  
+  .time-slot {
+    font-size: 1rem;
+    width: 80px;
+    min-width: 70px;
+  }
+}
+
+@media (max-width: 768px) {
+  .schedule-table {
+    font-size: 0.8rem;
+  }
+  
+  .schedule-table thead th,
+  .schedule-table td {
+    padding: 10px 6px;
+  }
+  
+  .class-name {
+    font-size: 0.8rem;
+    margin-bottom: 2px;
+  }
+  
+  .class-coach {
+    font-size: 0.7rem;
+  }
+  
+  .time-slot {
+    font-size: 0.9rem;
+    padding: 10px 6px;
+    width: 70px;
+    min-width: 60px;
+  }
+  
+  .class-slot {
+    min-height: 60px;
+    padding: 8px 4px;
+  }
+}
+
+@media (max-width: 576px) {
+  .schedule-table thead th {
+    font-size: 0.75rem;
+    padding: 8px 4px;
+  }
+  
+  .schedule-table td {
+    padding: 8px 4px;
+  }
+  
+  .class-name {
+    font-size: 0.7rem;
+    line-height: 1.1;
+  }
+  
+  .class-coach {
+    font-size: 0.65rem;
+  }
+  
+  .time-slot {
+    font-size: 0.8rem;
+    width: 60px;
+    min-width: 50px;
+  }
+  
+  .class-slot {
+    min-height: 50px;
+    padding: 6px 2px;
+  }
+  
+  /* Esconder algumas colunas em telas muito pequenas */
+  .schedule-table th:nth-child(7),
+  .schedule-table td:nth-child(7) {
+    display: none;
+  }
+}
+
+/* Animações sutis */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.schedule-grid {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Títulos das seções de horário */
+.schedule-section h3 {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 30px;
+}
+
+.schedule-section h3::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, currentColor, transparent);
+}
+
+/* ===================
+   FILTER BUTTONS STYLES
+   =================== */
+
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.btn-filter {
+  background: #fff;
+  border: 2px solid var(--warm-beige);
+  color: var(--dark-black);
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-filter:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn-filter:hover:before {
+  left: 100%;
+}
+
+.btn-filter:hover {
+  background: var(--warm-beige);
+  color: #fff;
+  border-color: var(--warm-beige);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(194, 151, 101, 0.3);
+}
+
+.btn-filter.active {
+  background: var(--primary-rust);
+  border-color: var(--primary-rust);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(153, 53, 22, 0.4);
+}
+
+.btn-filter.active:hover {
+  background: var(--rust-dark);
+  border-color: var(--rust-dark);
+}
+
+/* Animação suave para transições dos cards */
+.class-item {
+  transition: all 0.4s ease;
+  transform-origin: center;
+}
+
+.class-item.fade-in {
+  animation: fadeInScale 0.5s ease forwards;
+}
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Melhorar estilo dos cards de classe */
+.class-item .class-item-text p {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0;
+  margin-top: 8px;
+  line-height: 1.4;
+}
+
+.class-item:hover .class-item-text p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Restaurar estilo original dos cards */
+
+/* Responsividade dos botões de filtro */
+@media (max-width: 768px) {
+  .filter-buttons {
+    gap: 10px;
+  }
+  
+  .btn-filter {
+    padding: 10px 18px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .filter-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .btn-filter {
+    padding: 10px 20px;
+    font-size: 0.8rem;
+    min-width: 200px;
+  }
 }
