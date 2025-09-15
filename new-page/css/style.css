@@ -1369,7 +1369,7 @@ h1, .heading {
   position: relative;
 }
 
-/* Responsividade da grade */
+/* Responsividade básica para desktop e tablet */
 @media (max-width: 992px) {
   .schedule-table thead th,
   .schedule-table td {
@@ -1386,79 +1386,59 @@ h1, .heading {
   }
   
   .time-slot {
-    font-size: 1rem;
+    font-size: 0.95rem;
     width: 80px;
     min-width: 70px;
   }
 }
 
+/* Ocultar completamente a seção de horários no mobile */
 @media (max-width: 768px) {
-  .schedule-table {
-    font-size: 0.8rem;
-  }
-  
-  .schedule-table thead th,
-  .schedule-table td {
-    padding: 10px 6px;
-  }
-  
-  .class-name {
-    font-size: 0.8rem;
-    margin-bottom: 2px;
-  }
-  
-  .class-coach {
-    font-size: 0.7rem;
-  }
-  
-  .time-slot {
-    font-size: 0.9rem;
-    padding: 10px 6px;
-    width: 70px;
-    min-width: 60px;
-  }
-  
-  .class-slot {
-    min-height: 60px;
-    padding: 8px 4px;
+  #schedule-section {
+    display: none;
   }
 }
 
-@media (max-width: 576px) {
-  .schedule-table thead th {
-    font-size: 0.75rem;
-    padding: 8px 4px;
-  }
-  
-  .schedule-table td {
-    padding: 8px 4px;
-  }
-  
-  .class-name {
-    font-size: 0.7rem;
-    line-height: 1.1;
-  }
-  
-  .class-coach {
-    font-size: 0.65rem;
-  }
-  
-  .time-slot {
-    font-size: 0.8rem;
-    width: 60px;
-    min-width: 50px;
-  }
-  
-  .class-slot {
-    min-height: 50px;
-    padding: 6px 2px;
-  }
-  
-  /* Esconder algumas colunas em telas muito pequenas */
-  .schedule-table th:nth-child(7),
-  .schedule-table td:nth-child(7) {
-    display: none;
-  }
+/* Para desktop, manter apenas a tabela */
+.schedule-mobile-cards {
+  display: none;
+}
+
+/* Footer - Todo conteúdo grudado à esquerda com um pouco de espaço */
+.site-footer {
+  text-align: left;
+  padding-top: 20px !important;
+}
+
+.site-footer .container {
+  text-align: left;
+  padding-left: 15px !important;
+  margin-left: 0 !important;
+}
+
+.site-footer .row {
+  text-align: left;
+  margin-left: 0 !important;
+}
+
+.site-footer .col-lg-4,
+.site-footer .col-lg-8 {
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+}
+
+.site-footer .col-12 {
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+  text-align: left !important;
+  margin-top: 80px;
+  margin-bottom: 10px;
+}
+
+.site-footer .widget {
+  text-align: left;
+  padding-left: 0 !important;
+  margin-left: 0 !important;
 }
 
 /* Animações sutis */
