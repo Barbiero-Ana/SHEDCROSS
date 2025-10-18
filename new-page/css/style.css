@@ -85,6 +85,11 @@ h1, h2, h3, h4, h5,
   opacity: 0;
   visibility: hidden; }
 
+.site-wrap {
+  min-height: 100vh;
+  height: auto !important;
+}
+
 .offcanvas-menu .site-wrap {
   height: 100%;
   width: 100%;
@@ -1024,11 +1029,89 @@ h1, .heading {
 .site-footer {
   background: var(--dark-black);
   color: #fff;
+  padding: 60px 0 20px;
 }
 
 .site-footer h3 {
   color: var(--warm-beige);
   font-weight: bold;
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+}
+
+.site-footer p {
+  color: #b8b8b8;
+  line-height: 1.8;
+}
+
+/* Footer Links - Navegação */
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+.footer-links li a {
+  color: #b8b8b8;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+  position: relative;
+  padding-left: 0;
+}
+
+.footer-links li a:hover {
+  color: var(--primary-rust);
+  padding-left: 8px;
+}
+
+.footer-links li a::before {
+  content: '›';
+  position: absolute;
+  left: -15px;
+  opacity: 0;
+  transition: all 0.3s ease;
+  color: var(--primary-rust);
+  font-size: 1.2rem;
+}
+
+.footer-links li a:hover::before {
+  opacity: 1;
+  left: -5px;
+}
+
+/* Footer Contact */
+.footer-contact {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-contact li {
+  color: #b8b8b8;
+  margin-bottom: 12px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.footer-contact li i {
+  color: var(--primary-rust);
+  margin-right: 10px;
+  width: 20px;
+  text-align: center;
+}
+
+/* Copyright */
+.footer-copyright {
+  color: #888;
+  font-size: 0.9rem;
+  text-align: left;
 }
 
 /* Melhorias visuais */
@@ -1048,11 +1131,171 @@ h1, .heading {
 .contact-buttons .btn {
   width: 100%;
   margin-bottom: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Estilos da seção de contato */
+.contact-info {
+  position: relative;
+  z-index: 1;
+}
+
+.contact-cta {
+  position: relative;
+  z-index: 1;
+}
+
+.map-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.map-container iframe {
+  display: block;
+  width: 100%;
+  height: 300px;
+  border: 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Responsividade do mapa */
+@media (max-width: 768px) {
+  .map-container iframe {
+    height: 250px;
+  }
+}
+
+#contact-section {
+  position: relative;
+  overflow: visible;
+}
+
+#contact-section .row {
+  position: relative;
+  z-index: 1;
+}
+
+/* Correções gerais de layout mobile */
+@media (max-width: 768px) {
+  .site-section {
+    overflow: visible !important;
+    height: auto !important;
+  }
+
+  .site-wrap {
+    overflow-x: hidden !important;
+    overflow-y: visible !important;
+    min-height: 100vh;
+    height: auto !important;
+  }
+
+  body {
+    overflow-x: hidden !important;
+    overflow-y: visible !important;
+    height: auto !important;
+  }
+
+  html {
+    overflow-x: hidden !important;
+    overflow-y: visible !important;
+  }
+
+  .container {
+    overflow: visible !important;
+  }
+
+  .row {
+    overflow: visible !important;
+  }
+
+  /* Garantir que seções após a coach sejam visíveis */
+  #contact-section,
+  .site-footer {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: relative !important;
+    z-index: 1 !important;
+  }
+
+  /* Card para "Pronto para Começar?" apenas no mobile */
+  .contact-cta {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 30px 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+  }
+
+  .contact-cta h3 {
+    color: var(--primary-rust);
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+
+  .contact-cta p {
+    color: #666;
+    margin-bottom: 20px;
+  }
+
+  /* Remover hover do card no mobile */
+  .contact-cta:hover {
+    transform: none !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+  }
+}
+
+/* Efeito hover nas navlinks - apenas desktop */
+@media (min-width: 992px) {
+  .site-navbar .site-navigation .site-menu > li > a {
+    position: relative;
+    transition: color 0.3s ease;
+  }
+
+  .site-navbar .site-navigation .site-menu > li > a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    right: 20px;
+    height: 2px;
+    background: var(--primary-rust);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+  }
+
+  .site-navbar .site-navigation .site-menu > li > a:hover::after {
+    transform: scaleX(1);
+  }
+
+  .site-navbar .site-navigation .site-menu > li > a:hover {
+    color: var(--warm-beige) !important;
+  }
+
+  /* Para navbar sticky (quando faz scroll) */
+  .sticky-wrapper.is-sticky .site-navbar .site-menu > li > a::after {
+    background: var(--primary-rust);
+  }
+
+  .sticky-wrapper.is-sticky .site-navbar .site-menu > li > a:hover {
+    color: var(--primary-rust) !important;
+  }
+
+  /* Link ativo */
+  .site-navbar .site-navigation .site-menu > li > a.active::after {
+    transform: scaleX(1);
+  }
 }
 
 /* Hero Section Personalizada */
 .intro-section {
   min-height: 100vh;
+  height: auto;
   display: flex;
   align-items: center;
   position: relative;
@@ -1132,11 +1375,6 @@ h1, .heading {
   border: 5px solid var(--warm-beige);
   box-shadow: 0 8px 30px rgba(0,0,0,0.15);
   margin-bottom: 20px;
-  transition: transform 0.3s ease;
-}
-
-.coach-circle-img:hover {
-  transform: scale(1.05);
 }
 
 .coach-info-basic {
@@ -1218,9 +1456,22 @@ h1, .heading {
     width: 200px;
     height: 200px;
   }
-  
+
   .specialty-card {
     margin-bottom: 20px;
+  }
+
+  #trainer-section {
+    overflow: visible !important;
+    position: relative;
+  }
+
+  #trainer-section .container {
+    overflow: visible !important;
+  }
+
+  #trainer-section .row {
+    overflow: visible !important;
   }
 }
 
