@@ -1,4 +1,4 @@
-
+/* Importar fonte personalizada */
 @font-face {
     font-family: 'ShedFont';
     src: url('../font/Swansong.otf') format('opentype'),
@@ -8,7 +8,7 @@
     font-display: swap;
 }
 
-
+/* Paleta de Cores da Empresa */
 :root {
     --primary-rust: #993516;
     --dark-black: #1A1A1A;
@@ -24,7 +24,7 @@
     --orange-glow: rgba(153, 53, 22, 0.3);
 }
 
-
+/* Base */
 html {
   overflow-x: hidden; }
 
@@ -335,7 +335,7 @@ h1, h2, h3, h4, h5,
     appearance: none;
     width: 100%; }
 
-
+/* Navbar */
 .site-logo {
   position: relative;
   font-weight: 900;
@@ -659,7 +659,7 @@ h1, h2, h3, h4, h5,
     padding-top: 10px !important;
     padding-bottom: 10px !important; }
 
-
+/* Blocks */
 .intro-section {
   position: relative; }
   .intro-section > .container {
@@ -981,7 +981,7 @@ h1, h2, h3, h4, h5,
 .footer-section {
   padding-top: 12rem !important; }
 
-
+/* Customizações Shed Cross */
 .site-logo a {
   display: flex;
   align-items: center;
@@ -994,7 +994,7 @@ h1, h2, h3, h4, h5,
   margin-right: 10px;
 }
 
-
+/* Botões personalizados */
 .btn-primary {
   background: var(--primary-rust);
   border-color: var(--primary-rust);
@@ -1015,7 +1015,7 @@ h1, h2, h3, h4, h5,
   border-color: var(--primary-rust);
 }
 
-
+/* Headers com fonte personalizada */
 h1, .heading {
   font-family: var(--title-font);
   color: var(--dark-black) !important;
@@ -1025,7 +1025,7 @@ h1, .heading {
   color: var(--primary-rust) !important;
 }
 
-
+/* Footer personalizado */
 .site-footer {
   background: var(--dark-black);
   color: #fff;
@@ -1044,7 +1044,7 @@ h1, .heading {
   line-height: 1.8;
 }
 
-
+/* Footer Links - Navegação */
 .footer-links {
   list-style: none;
   padding: 0;
@@ -1085,7 +1085,7 @@ h1, .heading {
   left: -5px;
 }
 
-
+/* Footer Contact */
 .footer-contact {
   list-style: none;
   padding: 0;
@@ -1107,14 +1107,14 @@ h1, .heading {
   text-align: center;
 }
 
-
+/* Copyright */
 .footer-copyright {
   color: #888;
   font-size: 0.9rem;
   text-align: left;
 }
 
-
+/* Melhorias visuais */
 .person img {
   border-radius: 10px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
@@ -1135,7 +1135,7 @@ h1, .heading {
   z-index: 1;
 }
 
-
+/* Estilos da seção de contato */
 .contact-info {
   position: relative;
   z-index: 1;
@@ -1162,7 +1162,7 @@ h1, .heading {
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-
+/* Responsividade do mapa */
 @media (max-width: 768px) {
   .map-container iframe {
     height: 250px;
@@ -1179,7 +1179,7 @@ h1, .heading {
   z-index: 1;
 }
 
-
+/* Correções gerais de layout mobile */
 @media (max-width: 768px) {
   .site-section {
     overflow: visible !important;
@@ -1212,7 +1212,7 @@ h1, .heading {
     overflow: visible !important;
   }
 
-  
+  /* Garantir que seções após a coach sejam visíveis */
   #contact-section,
   .site-footer {
     display: block !important;
@@ -1222,7 +1222,7 @@ h1, .heading {
     z-index: 1 !important;
   }
 
-  
+  /* Card para "Pronto para Começar?" apenas no mobile */
   .contact-cta {
     background: #ffffff;
     border-radius: 15px;
@@ -1242,14 +1242,14 @@ h1, .heading {
     margin-bottom: 20px;
   }
 
-  
+  /* Remover hover do card no mobile */
   .contact-cta:hover {
     transform: none !important;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
   }
 }
 
-
+/* Efeito hover nas navlinks - apenas desktop */
 @media (min-width: 992px) {
   .site-navbar .site-navigation .site-menu > li > a {
     position: relative;
@@ -1277,7 +1277,7 @@ h1, .heading {
     color: var(--warm-beige) !important;
   }
 
-  
+  /* Para navbar sticky (quando faz scroll) */
   .sticky-wrapper.is-sticky .site-navbar .site-menu > li > a::after {
     background: var(--primary-rust);
   }
@@ -1286,13 +1286,13 @@ h1, .heading {
     color: var(--primary-rust) !important;
   }
 
-  
+  /* Link ativo */
   .site-navbar .site-navigation .site-menu > li > a.active::after {
     transform: scaleX(1);
   }
 }
 
-
+/* Hero Section Personalizada */
 .intro-section {
   min-height: 100vh;
   height: auto;
@@ -1355,7 +1355,7 @@ h1, .heading {
   transform: translateY(-2px);
 }
 
-
+/* Responsividade do título */
 @media (max-width: 768px) {
   .intro-section h1 {
     font-size: 2.5rem !important;
@@ -1366,7 +1366,7 @@ h1, .heading {
   }
 }
 
-
+/* Seção da Coach - Layout Circular */
 .coach-circle-img {
   width: 250px;
   height: 250px;
@@ -1450,7 +1450,7 @@ h1, .heading {
   top: 0;
 }
 
-
+/* Responsividade da seção coach */
 @media (max-width: 768px) {
   .coach-circle-img {
     width: 200px;
@@ -1475,7 +1475,7 @@ h1, .heading {
   }
 }
 
-
+/* Ícone personalizado children-park */
 .icon-children-park {
   display: inline-block;
   width: 60px;
@@ -1487,7 +1487,7 @@ h1, .heading {
   font-size: 60px;
 }
 
-
+/* Ícone personalizado - sem filtros */
 .ftco-feature-1 .icon img {
   width: 70px;
   height: 70px;
@@ -1495,7 +1495,9 @@ h1, .heading {
   vertical-align: middle;
 }
 
-
+/* ===================
+   SCHEDULE GRID STYLES
+   =================== */
 
 .schedule-grid {
   margin-bottom: 40px;
@@ -1610,7 +1612,7 @@ h1, .heading {
   opacity: 0.6;
 }
 
-
+/* Hover effects para as classes */
 .class-slot:hover {
   transform: scale(1.02);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -1618,7 +1620,7 @@ h1, .heading {
   position: relative;
 }
 
-
+/* Responsividade básica para desktop e tablet */
 @media (max-width: 992px) {
   .schedule-table thead th,
   .schedule-table td {
@@ -1641,19 +1643,19 @@ h1, .heading {
   }
 }
 
-
+/* Ocultar completamente a seção de horários no mobile */
 @media (max-width: 768px) {
   #schedule-section {
     display: none;
   }
 }
 
-
+/* Para desktop, manter apenas a tabela */
 .schedule-mobile-cards {
   display: none;
 }
 
-
+/* Footer - Todo conteúdo grudado à esquerda com um pouco de espaço */
 .site-footer {
   text-align: left;
   padding-top: 20px !important;
@@ -1690,7 +1692,7 @@ h1, .heading {
   margin-left: 0 !important;
 }
 
-
+/* Animações sutis */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -1706,7 +1708,7 @@ h1, .heading {
   animation: fadeInUp 0.6s ease-out;
 }
 
-
+/* Títulos das seções de horário */
 .schedule-section h3 {
   position: relative;
   display: inline-block;
@@ -1724,7 +1726,9 @@ h1, .heading {
   background: linear-gradient(90deg, transparent, currentColor, transparent);
 }
 
-
+/* ===================
+   FILTER BUTTONS STYLES
+   =================== */
 
 .filter-buttons {
   display: flex;
@@ -1787,7 +1791,7 @@ h1, .heading {
   border-color: var(--rust-dark);
 }
 
-
+/* Animação suave para transições dos cards */
 .class-item {
   transition: all 0.4s ease;
   transform-origin: center;
@@ -1808,7 +1812,7 @@ h1, .heading {
   }
 }
 
-
+/* Melhorar estilo dos cards de classe */
 .class-item .class-item-text p {
   font-size: 0.9rem;
   color: #666;
@@ -1821,9 +1825,9 @@ h1, .heading {
   color: rgba(255, 255, 255, 0.8);
 }
 
+/* Restaurar estilo original dos cards */
 
-
-
+/* Responsividade dos botões de filtro */
 @media (max-width: 768px) {
   .filter-buttons {
     gap: 10px;
