@@ -2,11 +2,14 @@
 <html lang="pt-BR">
 
 <head>
-  <title>Shed Cross &mdash; Movimento que Transforma</title>
+  <title>Shed Cross</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  
+  <link rel="icon" type="image/png" href="assets/SHED-CROSS-Logo.png">
+  <link rel="shortcut icon" type="image/png" href="assets/SHED-CROSS-Logo.png">
+  <link rel="apple-touch-icon" href="assets/SHED-CROSS-Logo.png">
+
   <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet">
   <link rel="stylesheet" href="fonts/icomoon/style.css">
 
@@ -28,6 +31,7 @@
 
   <link rel="stylesheet" href="css/style.css">
 
+
 </head>
 
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
@@ -42,8 +46,6 @@
       </div>
       <div class="site-mobile-menu-body"></div>
     </div>
-
-
     <header class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
 
       <div class="container-fluid">
@@ -71,8 +73,6 @@
       </div>
 
     </header>
-
-
     <div class="intro-section" id="home-section" style="background-image: url('./assets/pesos-man.png'); background-size: cover; background-position: center; background-repeat: no-repeat; min-height: 100vh; position: relative;">
       <div class="container">
 
@@ -101,7 +101,7 @@
           </div>
         </div>
 
-        <!-- Slider -->
+        
         <div class="owl-carousel nonloop-block-14 block-14" data-aos="fade">
           <div class="slide">
             <div class="ftco-feature-1">
@@ -191,11 +191,11 @@
           <div class="col-md-8  section-heading">
             <span class="subheading">Nossas Modalidades</span>
             <h2 class="heading mb-3">O que Oferecemos</h2>
-            <p>Modalidades pensadas para todos os públicos, desde adultos buscando performance até crianças com necessidades especiais de desenvolvimento motor.</p>
+            <p>Modalidades pensadas para todos os públicos, desde adultos buscando performance até crianças com  desenvolvimento atípico.</p>
           </div>
         </div>
         
-        <!-- Botões de Filtro -->
+        
         <div class="row justify-content-center mb-4">
           <div class="col-md-10">
             <div class="filter-buttons text-center">
@@ -206,45 +206,85 @@
             </div>
           </div>
         </div>
-        <!-- Classes Container -->
-        <div class="row" id="classes-container">
-          <div class="col-lg-6">
-            <!-- CrossFit -->
-            <div class="class-item d-flex align-items-center" data-category="crossfit">
-              <div class="class-item-thumbnail">
-                <img src="assets/thays-crossfit.jpg" alt="CrossFit">
-              </div>
-              <div class="class-item-text">
-                <h2>CrossFit</h2>
-                <p>Programa completo para todos os níveis (iniciante ao avançado). Inclui LPO, ginástica funcional, mobilidade e movimentos tradicionais.</p>
-              </div>
-            </div>
+        
+        <div class="services-grid" id="classes-container">
 
-            <!-- CrossFit Kids -->
-            <div class="class-item d-flex align-items-center" data-category="crossfit-kids">
-              <div class="class-item-thumbnail">
-                <img src="assets/tia-thay.jpg" alt="CrossFit Kids">
-              </div>
-              <div class="class-item-text">
-                <h2>CrossFit Kids</h2>
-                <p>Aulas em turma com horários especiais. Atividades lúdicas que desenvolvem coordenação e condicionamento físico.</p>
+          
+          <div class="service-card" data-category="crossfit" data-toggle="modal" data-target="#modalCrossFit">
+            <div class="service-card-image">
+              <img src="assets/crossfit-asset-2.png" alt="CrossFit">
+              <div class="service-card-badge">CrossFit</div>
+            </div>
+            <div class="service-card-body">
+              <h3 class="service-card-title">CrossFit</h3>
+              <p class="service-card-description">
+                Programa completo para todos os níveis (iniciante ao avançado). Inclui LPO, ginástica funcional, mobilidade e movimentos tradicionais.
+              </p>
+              <div class="service-card-footer">
+                <span class="service-card-link">
+                  Saiba mais <i class="fas fa-arrow-right"></i>
+                </span>
               </div>
             </div>
-            
           </div>
-          <div class="col-lg-6">
-            <!-- Intervenção Motora Infantil -->
-            <div class="class-item d-flex align-items-center" data-category="intervencao-motora">
-              <div class="class-item-thumbnail">
-                <img src="assets/tia-thay.jpg" alt="Intervenção Motora">
-              </div>
-              <div class="class-item-text">
-                <h2>Intervenção Motora Infantil</h2>
-                <p>Atendimento individual em sala para crianças atípicas. Desenvolvimento motor especializado e metodologia adaptada.</p>
+
+          
+          <div class="service-card" data-category="crossfit" data-toggle="modal" data-target="#modalPersonalCross">
+            <div class="service-card-image">
+              <img src="assets/crossfit-asset-3.png" alt="Personal Cross">
+              <div class="service-card-badge">Personal</div>
+            </div>
+            <div class="service-card-body">
+              <h3 class="service-card-title">Personal Cross</h3>
+              <p class="service-card-description">
+                Treino personalizado individual ou em pequenos grupos. Programação específica com foco em seus objetivos pessoais.
+              </p>
+              <div class="service-card-footer">
+                <span class="service-card-link">
+                  Saiba mais <i class="fas fa-arrow-right"></i>
+                </span>
               </div>
             </div>
-            
           </div>
+
+          
+          <div class="service-card" data-category="crossfit-kids" data-toggle="modal" data-target="#modalCrossFitKids">
+            <div class="service-card-image">
+              <img src="assets/crossfit-asset-4.png" alt="CrossFit Kids">
+              <div class="service-card-badge">Kids</div>
+            </div>
+            <div class="service-card-body">
+              <h3 class="service-card-title">CrossFit Kids</h3>
+              <p class="service-card-description">
+                Aulas em turma com horários especiais. Atividades lúdicas que desenvolvem coordenação e condicionamento físico.
+              </p>
+              <div class="service-card-footer">
+                <span class="service-card-link">
+                  Saiba mais <i class="fas fa-arrow-right"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="service-card" data-category="intervencao-motora" data-toggle="modal" data-target="#modalIntervencao">
+            <div class="service-card-image">
+              <img src="assets/Crossfit-asset-5.png" alt="Intervenção Motora">
+              <div class="service-card-badge">Intervenção</div>
+            </div>
+            <div class="service-card-body">
+              <h3 class="service-card-title">Intervenção Motora Infantil</h3>
+              <p class="service-card-description">
+                Atendimento individual em sala para crianças atípicas. Desenvolvimento motor especializado e metodologia adaptada.
+              </p>
+              <div class="service-card-footer">
+                <span class="service-card-link">
+                  Saiba mais <i class="fas fa-arrow-right"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
@@ -260,6 +300,38 @@
       </div>
     </div>
 
+    
+    <div class="site-section d-block d-md-none" style="padding: 40px 0;">
+      <div class="container">
+        <div class="row justify-content-center text-center mb-4">
+          <div class="col-md-8">
+            <h3 style="color: #973F1D; font-weight: 600; margin-bottom: 10px;">Confira Nossos Horários</h3>
+            <p style="color: #666; margin-bottom: 25px;">Clique nos botões abaixo para visualizar a grade completa</p>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-12">
+            <div class="schedule-mobile-buttons">
+              <a href="https://drive.google.com/file/d/1ytJQ5WxmJHzD6KgRH-EsNgjLi7X_Agz6/view"
+                 target="_blank"
+                 class="btn-schedule-mobile">
+                <i class="fas fa-calendar-alt"></i>
+                <span>Ver Horários CrossFit Adulto</span>
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+              <a href="https://drive.google.com/file/d/14osB4MqWiXY7CqO0zwoAQbw21t6lhp1Q/view"
+                 target="_blank"
+                 class="btn-schedule-mobile">
+                <i class="fas fa-calendar-alt"></i>
+                <span>Ver Horários CrossFit Infantil</span>
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="site-section" id="schedule-section">
       <div class="container">
         <div class="row justify-content-center text-center mb-5">
@@ -270,11 +342,11 @@
           </div>
         </div>
 
-        <!-- Grade de Horários CrossFit -->
+        
         <div class="mb-5">
           <h3 class="text-center mb-4" style="color: #973F1D; font-weight: 600;">CrossFit Adulto</h3>
           <div class="schedule-grid crossfit-schedule">
-            <!-- Layout Desktop - Tabela -->
+            
             <div class="table-responsive">
               <table class="schedule-table">
                 <thead>
@@ -359,6 +431,40 @@
                   </tr>
                   <tr>
                     <td class="time-slot">07:00</td>
+                    <td class="class-slot crossfit">
+                      <div class="class-info">
+                        <span class="class-name">CrossFit</span>
+                        <span class="class-coach">Coach Thaynara</span>
+                      </div>
+                    </td>
+                    <td class="class-slot crossfit">
+                      <div class="class-info">
+                        <span class="class-name">CrossFit</span>
+                        <span class="class-coach">Coach Thaynara</span>
+                      </div>
+                    </td>
+                    <td class="class-slot crossfit">
+                      <div class="class-info">
+                        <span class="class-name">CrossFit</span>
+                        <span class="class-coach">Coach Thaynara</span>
+                      </div>
+                    </td>
+                    <td class="class-slot crossfit">
+                      <div class="class-info">
+                        <span class="class-name">CrossFit</span>
+                        <span class="class-coach">Coach Thaynara</span>
+                      </div>
+                    </td>
+                    <td class="class-slot crossfit">
+                      <div class="class-info">
+                        <span class="class-name">CrossFit</span>
+                        <span class="class-coach">Coach Thaynara</span>
+                      </div>
+                    </td>
+                    <td class="empty-slot">-</td>
+                  </tr>
+                  <tr>
+                    <td class="time-slot">08:00</td>
                     <td class="class-slot crossfit">
                       <div class="class-info">
                         <span class="class-name">CrossFit</span>
@@ -536,9 +642,9 @@
               </table>
             </div>
             
-            <!-- Layout Mobile - Cards -->
+            
             <div class="schedule-mobile-cards">
-              <!-- Segunda-feira -->
+              
               <div class="schedule-day-card">
                 <div class="schedule-day-header">Segunda-feira</div>
                 <div class="schedule-day-classes">
@@ -564,6 +670,13 @@
                     </div>
                   </div>
                   <div class="schedule-class-item">
+                    <div class="schedule-class-time">08:00</div>
+                    <div class="schedule-class-details">
+                      <div class="schedule-class-name">CrossFit</div>
+                      <div class="schedule-class-coach">Coach Thaynara</div>
+                    </div>
+                  </div>
+                  <div class="schedule-class-item">
                     <div class="schedule-class-time">12:00</div>
                     <div class="schedule-class-details">
                       <div class="schedule-class-name">CrossFit</div>
@@ -594,7 +707,7 @@
                 </div>
               </div>
 
-              <!-- Terça-feira -->
+              
               <div class="schedule-day-card">
                 <div class="schedule-day-header">Terça-feira</div>
                 <div class="schedule-day-classes">
@@ -620,6 +733,13 @@
                     </div>
                   </div>
                   <div class="schedule-class-item">
+                    <div class="schedule-class-time">08:00</div>
+                    <div class="schedule-class-details">
+                      <div class="schedule-class-name">CrossFit</div>
+                      <div class="schedule-class-coach">Coach Thaynara</div>
+                    </div>
+                  </div>
+                  <div class="schedule-class-item">
                     <div class="schedule-class-time">12:00</div>
                     <div class="schedule-class-details">
                       <div class="schedule-class-name">CrossFit</div>
@@ -650,7 +770,7 @@
                 </div>
               </div>
 
-              <!-- Quarta-feira -->
+              
               <div class="schedule-day-card">
                 <div class="schedule-day-header">Quarta-feira</div>
                 <div class="schedule-day-classes">
@@ -676,6 +796,13 @@
                     </div>
                   </div>
                   <div class="schedule-class-item">
+                    <div class="schedule-class-time">08:00</div>
+                    <div class="schedule-class-details">
+                      <div class="schedule-class-name">CrossFit</div>
+                      <div class="schedule-class-coach">Coach Thaynara</div>
+                    </div>
+                  </div>
+                  <div class="schedule-class-item">
                     <div class="schedule-class-time">12:00</div>
                     <div class="schedule-class-details">
                       <div class="schedule-class-name">CrossFit</div>
@@ -706,7 +833,7 @@
                 </div>
               </div>
 
-              <!-- Quinta-feira -->
+              
               <div class="schedule-day-card">
                 <div class="schedule-day-header">Quinta-feira</div>
                 <div class="schedule-day-classes">
@@ -732,6 +859,13 @@
                     </div>
                   </div>
                   <div class="schedule-class-item">
+                    <div class="schedule-class-time">08:00</div>
+                    <div class="schedule-class-details">
+                      <div class="schedule-class-name">CrossFit</div>
+                      <div class="schedule-class-coach">Coach Thaynara</div>
+                    </div>
+                  </div>
+                  <div class="schedule-class-item">
                     <div class="schedule-class-time">12:00</div>
                     <div class="schedule-class-details">
                       <div class="schedule-class-name">CrossFit</div>
@@ -762,7 +896,7 @@
                 </div>
               </div>
 
-              <!-- Sexta-feira -->
+              
               <div class="schedule-day-card">
                 <div class="schedule-day-header">Sexta-feira</div>
                 <div class="schedule-day-classes">
@@ -788,6 +922,13 @@
                     </div>
                   </div>
                   <div class="schedule-class-item">
+                    <div class="schedule-class-time">08:00</div>
+                    <div class="schedule-class-details">
+                      <div class="schedule-class-name">CrossFit</div>
+                      <div class="schedule-class-coach">Coach Thaynara</div>
+                    </div>
+                  </div>
+                  <div class="schedule-class-item">
                     <div class="schedule-class-time">12:00</div>
                     <div class="schedule-class-details">
                       <div class="schedule-class-name">CrossFit</div>
@@ -818,12 +959,12 @@
                 </div>
               </div>
 
-              <!-- Sábado -->
+              
               <div class="schedule-day-card">
                 <div class="schedule-day-header">Sábado</div>
                 <div class="schedule-day-classes">
                   <div class="schedule-class-item">
-                    <div class="schedule-class-time">07:00</div>
+                    <div class="schedule-class-time">08:00</div>
                     <div class="schedule-class-details">
                       <div class="schedule-class-name">CrossFit</div>
                       <div class="schedule-class-coach">Coach Thaynara</div>
@@ -835,11 +976,11 @@
           </div>
         </div>
 
-        <!-- Grade de Horários Infantil -->
+        
         <div class="mb-5">
           <h3 class="text-center mb-4" style="color: #2A3622; font-weight: 600;">Programas Infantis</h3>
           <div class="schedule-grid kids-schedule">
-            <!-- Layout Desktop - Tabela -->
+            
             <div class="table-responsive">
               <table class="schedule-table">
                 <thead>
@@ -855,170 +996,204 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td class="time-slot">08:30</td>
+                    <td class="time-slot">08:30 - 09:20</td>
                     <td class="class-slot kids">
                       <div class="class-info">
-                        <span class="class-name">Intervenção Motora</span>
+                        <span class="class-name">Personal Cross Infantil</span>
                         <span class="class-coach">Tia Thay</span>
                       </div>
                     </td>
                     <td class="class-slot kids">
                       <div class="class-info">
-                        <span class="class-name">Intervenção Motora</span>
+                        <span class="class-name">Personal Cross Infantil</span>
                         <span class="class-coach">Tia Thay</span>
                       </div>
                     </td>
                     <td class="class-slot kids">
                       <div class="class-info">
-                        <span class="class-name">Intervenção Motora</span>
+                        <span class="class-name">Personal Cross Infantil</span>
                         <span class="class-coach">Tia Thay</span>
                       </div>
                     </td>
                     <td class="class-slot kids">
                       <div class="class-info">
-                        <span class="class-name">Intervenção Motora</span>
+                        <span class="class-name">Personal Cross Infantil</span>
                         <span class="class-coach">Tia Thay</span>
                       </div>
                     </td>
                     <td class="class-slot kids">
                       <div class="class-info">
-                        <span class="class-name">Intervenção Motora</span>
-                        <span class="class-coach">Tia Thay</span>
-                      </div>
-                    </td>
-                    <td class="empty-slot">-</td>
-                  </tr>
-                  <tr>
-                    <td class="time-slot">09:30</td>
-                    <td class="class-slot kids">
-                      <div class="class-info">
-                        <span class="class-name">Desenvolvimento Psicomotor</span>
-                        <span class="class-coach">Tia Thay</span>
-                      </div>
-                    </td>
-                    <td class="class-slot kids">
-                      <div class="class-info">
-                        <span class="class-name">Desenvolvimento Psicomotor</span>
-                        <span class="class-coach">Tia Thay</span>
-                      </div>
-                    </td>
-                    <td class="class-slot kids">
-                      <div class="class-info">
-                        <span class="class-name">Desenvolvimento Psicomotor</span>
-                        <span class="class-coach">Tia Thay</span>
-                      </div>
-                    </td>
-                    <td class="class-slot kids">
-                      <div class="class-info">
-                        <span class="class-name">Desenvolvimento Psicomotor</span>
-                        <span class="class-coach">Tia Thay</span>
-                      </div>
-                    </td>
-                    <td class="class-slot kids">
-                      <div class="class-info">
-                        <span class="class-name">Desenvolvimento Psicomotor</span>
+                        <span class="class-name">Personal Cross Infantil</span>
                         <span class="class-coach">Tia Thay</span>
                       </div>
                     </td>
                     <td class="empty-slot">-</td>
                   </tr>
                   <tr>
-                    <td class="time-slot">10:30</td>
+                    <td class="time-slot">09:30 - 10:20</td>
                     <td class="class-slot kids">
                       <div class="class-info">
-                        <span class="class-name">Funcional Kids</span>
+                        <span class="class-name">Personal Cross Infantil</span>
                         <span class="class-coach">Tia Thay</span>
                       </div>
                     </td>
                     <td class="class-slot kids">
                       <div class="class-info">
-                        <span class="class-name">Funcional Kids</span>
+                        <span class="class-name">Personal Cross Infantil</span>
                         <span class="class-coach">Tia Thay</span>
                       </div>
                     </td>
                     <td class="class-slot kids">
                       <div class="class-info">
-                        <span class="class-name">Funcional Kids</span>
+                        <span class="class-name">Personal Cross Infantil</span>
                         <span class="class-coach">Tia Thay</span>
                       </div>
                     </td>
                     <td class="class-slot kids">
                       <div class="class-info">
-                        <span class="class-name">Funcional Kids</span>
+                        <span class="class-name">Personal Cross Infantil</span>
                         <span class="class-coach">Tia Thay</span>
                       </div>
                     </td>
                     <td class="class-slot kids">
                       <div class="class-info">
-                        <span class="class-name">Funcional Kids</span>
-                        <span class="class-coach">Tia Thay</span>
-                      </div>
-                    </td>
-                    <td class="empty-slot">-</td>
-                  </tr>
-                  <tr>
-                    <td class="time-slot">14:30</td>
-                    <td class="class-slot kids">
-                      <div class="class-info">
-                        <span class="class-name">Intervenção Motora</span>
-                        <span class="class-coach">Tia Thay</span>
-                      </div>
-                    </td>
-                    <td class="class-slot kids">
-                      <div class="class-info">
-                        <span class="class-name">Intervenção Motora</span>
-                        <span class="class-coach">Tia Thay</span>
-                      </div>
-                    </td>
-                    <td class="class-slot kids">
-                      <div class="class-info">
-                        <span class="class-name">Intervenção Motora</span>
-                        <span class="class-coach">Tia Thay</span>
-                      </div>
-                    </td>
-                    <td class="class-slot kids">
-                      <div class="class-info">
-                        <span class="class-name">Intervenção Motora</span>
-                        <span class="class-coach">Tia Thay</span>
-                      </div>
-                    </td>
-                    <td class="class-slot kids">
-                      <div class="class-info">
-                        <span class="class-name">Intervenção Motora</span>
+                        <span class="class-name">Personal Cross Infantil</span>
                         <span class="class-coach">Tia Thay</span>
                       </div>
                     </td>
                     <td class="empty-slot">-</td>
                   </tr>
                   <tr>
-                    <td class="time-slot">15:30</td>
+                    <td class="time-slot">10:30 - 11:20</td>
                     <td class="class-slot kids">
                       <div class="class-info">
-                        <span class="class-name">Desenvolvimento Infantil</span>
+                        <span class="class-name">Personal Cross Infantil</span>
                         <span class="class-coach">Tia Thay</span>
                       </div>
                     </td>
                     <td class="class-slot kids">
                       <div class="class-info">
-                        <span class="class-name">Desenvolvimento Infantil</span>
+                        <span class="class-name">Personal Cross Infantil</span>
                         <span class="class-coach">Tia Thay</span>
                       </div>
                     </td>
                     <td class="class-slot kids">
                       <div class="class-info">
-                        <span class="class-name">Desenvolvimento Infantil</span>
+                        <span class="class-name">Personal Cross Infantil</span>
                         <span class="class-coach">Tia Thay</span>
                       </div>
                     </td>
                     <td class="class-slot kids">
                       <div class="class-info">
-                        <span class="class-name">Desenvolvimento Infantil</span>
+                        <span class="class-name">Personal Cross Infantil</span>
                         <span class="class-coach">Tia Thay</span>
                       </div>
                     </td>
                     <td class="class-slot kids">
                       <div class="class-info">
-                        <span class="class-name">Desenvolvimento Infantil</span>
+                        <span class="class-name">Personal Cross Infantil</span>
+                        <span class="class-coach">Tia Thay</span>
+                      </div>
+                    </td>
+                    <td class="empty-slot">-</td>
+                  </tr>
+                  <tr>
+                    <td class="time-slot">14:00 - 14:50</td>
+                    <td class="class-slot kids">
+                      <div class="class-info">
+                        <span class="class-name">Personal Cross Infantil</span>
+                        <span class="class-coach">Tia Thay</span>
+                      </div>
+                    </td>
+                    <td class="class-slot kids">
+                      <div class="class-info">
+                        <span class="class-name">Personal Cross Infantil</span>
+                        <span class="class-coach">Tia Thay</span>
+                      </div>
+                    </td>
+                    <td class="class-slot kids">
+                      <div class="class-info">
+                        <span class="class-name">Personal Cross Infantil</span>
+                        <span class="class-coach">Tia Thay</span>
+                      </div>
+                    </td>
+                    <td class="class-slot kids">
+                      <div class="class-info">
+                        <span class="class-name">Personal Cross Infantil</span>
+                        <span class="class-coach">Tia Thay</span>
+                      </div>
+                    </td>
+                    <td class="class-slot kids">
+                      <div class="class-info">
+                        <span class="class-name">Personal Cross Infantil</span>
+                        <span class="class-coach">Tia Thay</span>
+                      </div>
+                    </td>
+                    <td class="empty-slot">-</td>
+                  </tr>
+                  <tr>
+                    <td class="time-slot">15:00 - 15:50</td>
+                    <td class="class-slot kids">
+                      <div class="class-info">
+                        <span class="class-name">Personal Cross Infantil</span>
+                        <span class="class-coach">Tia Thay</span>
+                      </div>
+                    </td>
+                    <td class="class-slot kids">
+                      <div class="class-info">
+                        <span class="class-name">Personal Cross Infantil</span>
+                        <span class="class-coach">Tia Thay</span>
+                      </div>
+                    </td>
+                    <td class="class-slot kids">
+                      <div class="class-info">
+                        <span class="class-name">Personal Cross Infantil</span>
+                        <span class="class-coach">Tia Thay</span>
+                      </div>
+                    </td>
+                    <td class="class-slot kids">
+                      <div class="class-info">
+                        <span class="class-name">Personal Cross Infantil</span>
+                        <span class="class-coach">Tia Thay</span>
+                      </div>
+                    </td>
+                    <td class="class-slot kids">
+                      <div class="class-info">
+                        <span class="class-name">Personal Cross Infantil</span>
+                        <span class="class-coach">Tia Thay</span>
+                      </div>
+                    </td>
+                    <td class="empty-slot">-</td>
+                  </tr>
+                  <tr>
+                    <td class="time-slot">16:00 - 16:50</td>
+                    <td class="class-slot kids">
+                      <div class="class-info">
+                        <span class="class-name">Personal Cross Infantil</span>
+                        <span class="class-coach">Tia Thay</span>
+                      </div>
+                    </td>
+                    <td class="class-slot kids">
+                      <div class="class-info">
+                        <span class="class-name">Personal Cross Infantil</span>
+                        <span class="class-coach">Tia Thay</span>
+                      </div>
+                    </td>
+                    <td class="class-slot kids">
+                      <div class="class-info">
+                        <span class="class-name">Personal Cross Infantil</span>
+                        <span class="class-coach">Tia Thay</span>
+                      </div>
+                    </td>
+                    <td class="class-slot kids">
+                      <div class="class-info">
+                        <span class="class-name">Personal Cross Infantil</span>
+                        <span class="class-coach">Tia Thay</span>
+                      </div>
+                    </td>
+                    <td class="class-slot kids">
+                      <div class="class-info">
+                        <span class="class-name">Personal Cross Infantil</span>
                         <span class="class-coach">Tia Thay</span>
                       </div>
                     </td>
@@ -1028,219 +1203,254 @@
               </table>
             </div>
             
-            <!-- Layout Mobile - Cards -->
+            
             <div class="schedule-mobile-cards">
-              <!-- Segunda-feira -->
+              
               <div class="schedule-day-card">
                 <div class="schedule-day-header">Segunda-feira</div>
                 <div class="schedule-day-classes">
                   <div class="schedule-class-item">
-                    <div class="schedule-class-time">08:30</div>
+                    <div class="schedule-class-time">08:30 - 09:20</div>
                     <div class="schedule-class-details">
-                      <div class="schedule-class-name">Intervenção Motora</div>
+                      <div class="schedule-class-name">Personal Cross Infantil</div>
                       <div class="schedule-class-coach">Tia Thay</div>
                     </div>
                   </div>
                   <div class="schedule-class-item">
-                    <div class="schedule-class-time">09:30</div>
+                    <div class="schedule-class-time">09:30 - 10:20</div>
                     <div class="schedule-class-details">
-                      <div class="schedule-class-name">Desenvolvimento Psicomotor</div>
+                      <div class="schedule-class-name">Personal Cross Infantil</div>
                       <div class="schedule-class-coach">Tia Thay</div>
                     </div>
                   </div>
                   <div class="schedule-class-item">
-                    <div class="schedule-class-time">10:30</div>
+                    <div class="schedule-class-time">10:30 - 11:20</div>
                     <div class="schedule-class-details">
-                      <div class="schedule-class-name">Funcional Kids</div>
+                      <div class="schedule-class-name">Personal Cross Infantil</div>
                       <div class="schedule-class-coach">Tia Thay</div>
                     </div>
                   </div>
                   <div class="schedule-class-item">
-                    <div class="schedule-class-time">14:30</div>
+                    <div class="schedule-class-time">14:00 - 14:50</div>
                     <div class="schedule-class-details">
-                      <div class="schedule-class-name">Intervenção Motora</div>
+                      <div class="schedule-class-name">Personal Cross Infantil</div>
                       <div class="schedule-class-coach">Tia Thay</div>
                     </div>
                   </div>
                   <div class="schedule-class-item">
-                    <div class="schedule-class-time">15:30</div>
+                    <div class="schedule-class-time">15:00 - 15:50</div>
                     <div class="schedule-class-details">
-                      <div class="schedule-class-name">Desenvolvimento Infantil</div>
+                      <div class="schedule-class-name">Personal Cross Infantil</div>
+                      <div class="schedule-class-coach">Tia Thay</div>
+                    </div>
+                  </div>
+                  <div class="schedule-class-item">
+                    <div class="schedule-class-time">16:00 - 16:50</div>
+                    <div class="schedule-class-details">
+                      <div class="schedule-class-name">Personal Cross Infantil</div>
                       <div class="schedule-class-coach">Tia Thay</div>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <!-- Terça-feira -->
+              
               <div class="schedule-day-card">
                 <div class="schedule-day-header">Terça-feira</div>
                 <div class="schedule-day-classes">
                   <div class="schedule-class-item">
-                    <div class="schedule-class-time">08:30</div>
+                    <div class="schedule-class-time">08:30 - 09:20</div>
                     <div class="schedule-class-details">
-                      <div class="schedule-class-name">Intervenção Motora</div>
+                      <div class="schedule-class-name">Personal Cross Infantil</div>
                       <div class="schedule-class-coach">Tia Thay</div>
                     </div>
                   </div>
                   <div class="schedule-class-item">
-                    <div class="schedule-class-time">09:30</div>
+                    <div class="schedule-class-time">09:30 - 10:20</div>
                     <div class="schedule-class-details">
-                      <div class="schedule-class-name">Desenvolvimento Psicomotor</div>
+                      <div class="schedule-class-name">Personal Cross Infantil</div>
                       <div class="schedule-class-coach">Tia Thay</div>
                     </div>
                   </div>
                   <div class="schedule-class-item">
-                    <div class="schedule-class-time">10:30</div>
+                    <div class="schedule-class-time">10:30 - 11:20</div>
                     <div class="schedule-class-details">
-                      <div class="schedule-class-name">Funcional Kids</div>
+                      <div class="schedule-class-name">Personal Cross Infantil</div>
                       <div class="schedule-class-coach">Tia Thay</div>
                     </div>
                   </div>
                   <div class="schedule-class-item">
-                    <div class="schedule-class-time">14:30</div>
+                    <div class="schedule-class-time">14:00 - 14:50</div>
                     <div class="schedule-class-details">
-                      <div class="schedule-class-name">Intervenção Motora</div>
+                      <div class="schedule-class-name">Personal Cross Infantil</div>
                       <div class="schedule-class-coach">Tia Thay</div>
                     </div>
                   </div>
                   <div class="schedule-class-item">
-                    <div class="schedule-class-time">15:30</div>
+                    <div class="schedule-class-time">15:00 - 15:50</div>
                     <div class="schedule-class-details">
-                      <div class="schedule-class-name">Desenvolvimento Infantil</div>
+                      <div class="schedule-class-name">Personal Cross Infantil</div>
+                      <div class="schedule-class-coach">Tia Thay</div>
+                    </div>
+                  </div>
+                  <div class="schedule-class-item">
+                    <div class="schedule-class-time">16:00 - 16:50</div>
+                    <div class="schedule-class-details">
+                      <div class="schedule-class-name">Personal Cross Infantil</div>
                       <div class="schedule-class-coach">Tia Thay</div>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <!-- Quarta-feira -->
+              
               <div class="schedule-day-card">
                 <div class="schedule-day-header">Quarta-feira</div>
                 <div class="schedule-day-classes">
                   <div class="schedule-class-item">
-                    <div class="schedule-class-time">08:30</div>
+                    <div class="schedule-class-time">08:30 - 09:20</div>
                     <div class="schedule-class-details">
-                      <div class="schedule-class-name">Intervenção Motora</div>
+                      <div class="schedule-class-name">Personal Cross Infantil</div>
                       <div class="schedule-class-coach">Tia Thay</div>
                     </div>
                   </div>
                   <div class="schedule-class-item">
-                    <div class="schedule-class-time">09:30</div>
+                    <div class="schedule-class-time">09:30 - 10:20</div>
                     <div class="schedule-class-details">
-                      <div class="schedule-class-name">Desenvolvimento Psicomotor</div>
+                      <div class="schedule-class-name">Personal Cross Infantil</div>
                       <div class="schedule-class-coach">Tia Thay</div>
                     </div>
                   </div>
                   <div class="schedule-class-item">
-                    <div class="schedule-class-time">10:30</div>
+                    <div class="schedule-class-time">10:30 - 11:20</div>
                     <div class="schedule-class-details">
-                      <div class="schedule-class-name">Funcional Kids</div>
+                      <div class="schedule-class-name">Personal Cross Infantil</div>
                       <div class="schedule-class-coach">Tia Thay</div>
                     </div>
                   </div>
                   <div class="schedule-class-item">
-                    <div class="schedule-class-time">14:30</div>
+                    <div class="schedule-class-time">14:00 - 14:50</div>
                     <div class="schedule-class-details">
-                      <div class="schedule-class-name">Intervenção Motora</div>
+                      <div class="schedule-class-name">Personal Cross Infantil</div>
                       <div class="schedule-class-coach">Tia Thay</div>
                     </div>
                   </div>
                   <div class="schedule-class-item">
-                    <div class="schedule-class-time">15:30</div>
+                    <div class="schedule-class-time">15:00 - 15:50</div>
                     <div class="schedule-class-details">
-                      <div class="schedule-class-name">Desenvolvimento Infantil</div>
+                      <div class="schedule-class-name">Personal Cross Infantil</div>
+                      <div class="schedule-class-coach">Tia Thay</div>
+                    </div>
+                  </div>
+                  <div class="schedule-class-item">
+                    <div class="schedule-class-time">16:00 - 16:50</div>
+                    <div class="schedule-class-details">
+                      <div class="schedule-class-name">Personal Cross Infantil</div>
                       <div class="schedule-class-coach">Tia Thay</div>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <!-- Quinta-feira -->
+              
               <div class="schedule-day-card">
                 <div class="schedule-day-header">Quinta-feira</div>
                 <div class="schedule-day-classes">
                   <div class="schedule-class-item">
-                    <div class="schedule-class-time">08:30</div>
+                    <div class="schedule-class-time">08:30 - 09:20</div>
                     <div class="schedule-class-details">
-                      <div class="schedule-class-name">Intervenção Motora</div>
+                      <div class="schedule-class-name">Personal Cross Infantil</div>
                       <div class="schedule-class-coach">Tia Thay</div>
                     </div>
                   </div>
                   <div class="schedule-class-item">
-                    <div class="schedule-class-time">09:30</div>
+                    <div class="schedule-class-time">09:30 - 10:20</div>
                     <div class="schedule-class-details">
-                      <div class="schedule-class-name">Desenvolvimento Psicomotor</div>
+                      <div class="schedule-class-name">Personal Cross Infantil</div>
                       <div class="schedule-class-coach">Tia Thay</div>
                     </div>
                   </div>
                   <div class="schedule-class-item">
-                    <div class="schedule-class-time">10:30</div>
+                    <div class="schedule-class-time">10:30 - 11:20</div>
                     <div class="schedule-class-details">
-                      <div class="schedule-class-name">Funcional Kids</div>
+                      <div class="schedule-class-name">Personal Cross Infantil</div>
                       <div class="schedule-class-coach">Tia Thay</div>
                     </div>
                   </div>
                   <div class="schedule-class-item">
-                    <div class="schedule-class-time">14:30</div>
+                    <div class="schedule-class-time">14:00 - 14:50</div>
                     <div class="schedule-class-details">
-                      <div class="schedule-class-name">Intervenção Motora</div>
+                      <div class="schedule-class-name">Personal Cross Infantil</div>
                       <div class="schedule-class-coach">Tia Thay</div>
                     </div>
                   </div>
                   <div class="schedule-class-item">
-                    <div class="schedule-class-time">15:30</div>
+                    <div class="schedule-class-time">15:00 - 15:50</div>
                     <div class="schedule-class-details">
-                      <div class="schedule-class-name">Desenvolvimento Infantil</div>
+                      <div class="schedule-class-name">Personal Cross Infantil</div>
+                      <div class="schedule-class-coach">Tia Thay</div>
+                    </div>
+                  </div>
+                  <div class="schedule-class-item">
+                    <div class="schedule-class-time">16:00 - 16:50</div>
+                    <div class="schedule-class-details">
+                      <div class="schedule-class-name">Personal Cross Infantil</div>
                       <div class="schedule-class-coach">Tia Thay</div>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <!-- Sexta-feira -->
+              
               <div class="schedule-day-card">
                 <div class="schedule-day-header">Sexta-feira</div>
                 <div class="schedule-day-classes">
                   <div class="schedule-class-item">
-                    <div class="schedule-class-time">08:30</div>
+                    <div class="schedule-class-time">08:30 - 09:20</div>
                     <div class="schedule-class-details">
-                      <div class="schedule-class-name">Intervenção Motora</div>
+                      <div class="schedule-class-name">Personal Cross Infantil</div>
                       <div class="schedule-class-coach">Tia Thay</div>
                     </div>
                   </div>
                   <div class="schedule-class-item">
-                    <div class="schedule-class-time">09:30</div>
+                    <div class="schedule-class-time">09:30 - 10:20</div>
                     <div class="schedule-class-details">
-                      <div class="schedule-class-name">Desenvolvimento Psicomotor</div>
+                      <div class="schedule-class-name">Personal Cross Infantil</div>
                       <div class="schedule-class-coach">Tia Thay</div>
                     </div>
                   </div>
                   <div class="schedule-class-item">
-                    <div class="schedule-class-time">10:30</div>
+                    <div class="schedule-class-time">10:30 - 11:20</div>
                     <div class="schedule-class-details">
-                      <div class="schedule-class-name">Funcional Kids</div>
+                      <div class="schedule-class-name">Personal Cross Infantil</div>
                       <div class="schedule-class-coach">Tia Thay</div>
                     </div>
                   </div>
                   <div class="schedule-class-item">
-                    <div class="schedule-class-time">14:30</div>
+                    <div class="schedule-class-time">14:00 - 14:50</div>
                     <div class="schedule-class-details">
-                      <div class="schedule-class-name">Intervenção Motora</div>
+                      <div class="schedule-class-name">Personal Cross Infantil</div>
                       <div class="schedule-class-coach">Tia Thay</div>
                     </div>
                   </div>
                   <div class="schedule-class-item">
-                    <div class="schedule-class-time">15:30</div>
+                    <div class="schedule-class-time">15:00 - 15:50</div>
                     <div class="schedule-class-details">
-                      <div class="schedule-class-name">Desenvolvimento Infantil</div>
+                      <div class="schedule-class-name">Personal Cross Infantil</div>
+                      <div class="schedule-class-coach">Tia Thay</div>
+                    </div>
+                  </div>
+                  <div class="schedule-class-item">
+                    <div class="schedule-class-time">16:00 - 16:50</div>
+                    <div class="schedule-class-details">
+                      <div class="schedule-class-name">Personal Cross Infantil</div>
                       <div class="schedule-class-coach">Tia Thay</div>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <!-- Sábado -->
+              
               <div class="schedule-day-card">
                 <div class="schedule-day-header">Sábado</div>
                 <div class="schedule-day-classes">
@@ -1253,8 +1463,6 @@
         
       </div>
     </div>
-
-
     <div class="bgimg" style="background-image: url('./assets/woman-strong.png');" data-stellar-background-ratio="0.5">
       <div class="container">
         <div class="row align-items-center justify-content-center text-center">
@@ -1265,8 +1473,6 @@
         </div>
       </div>
     </div>
-
-
     
     
     <div class="site-section" id="trainer-section">
@@ -1280,19 +1486,19 @@
         </div>
 
         <div class="row align-items-center">
-          <!-- Foto da Coach (Lado Esquerdo) -->
+          
           <div class="col-lg-4 col-md-12 text-center mb-4 mb-lg-0" data-aos="fade-right">
             <div class="coach-photo-circle">
               <img src="assets/tia-thay.jpg" alt="Coach Thaynara Correa" class="coach-circle-img">
               <div class="coach-info-basic">
                 <h3>Thaynara Correa</h3>
-                <p class="coach-title">Coach de CrossFit & Especialista em Movimento Infantil</p>
+                <p class="coach-title">Coach de CrossFit & Facilitadora do Movimento Infantil</p>
                 <p class="coach-age">• Fundadora da Shed Cross</p>
               </div>
             </div>
           </div>
 
-          <!-- Especialidades e Experiências (Lado Direito) -->
+          
           <div class="col-lg-8 col-md-12" data-aos="fade-left">
             <div class="coach-specialties">
               
@@ -1368,13 +1574,26 @@
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="">
             <div class="contact-info">
               <h3>Localização</h3>
-              <div class="map-container" style="margin-bottom: 20px;">
+              
+              <div class="map-container d-none d-md-block" style="margin-bottom: 20px;">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3841.660999928638!2d-56.122823424225096!3d-15.663030384959137!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x939dad016e2b67e3%3A0x9b9021d46502930d!2sSHED%20Cross!5e0!3m2!1spt-BR!2sbr!4v1760743718355!5m2!1spt-BR!2sbr" width="100%" height="300" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+              
+              <div class="map-container d-block d-md-none" style="margin-bottom: 20px;">
+                <div style="background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%); padding: 20px; border-radius: 8px; text-align: center;">
+                  <h4 style="color: white; margin-bottom: 15px; font-size: 18px;">Navegue até a Shed Cross</h4>
+                  <a href="https://ul.waze.com/ul?place=ChIJ42crbgGtnZMRDZMCZdQhkJs&ll=-15.66303040%2C-56.12024850&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location"
+                     target="_blank"
+                     style="display: inline-block; background-color: #33CCFF; color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 16px; box-shadow: 0 4px 6px rgba(0,0,0,0.2);">
+                    <i class="fas fa-map-marked-alt" style="margin-right: 8px;"></i>Abrir no Waze
+                  </a>
+                  <p style="color: white; margin-top: 15px; font-size: 12px; opacity: 0.9;">Toque para iniciar a navegação</p>
+                </div>
               </div>
               
               
               <h3 style="margin-top: 30px;">Horários</h3>
-              <p>Segunda a Sexta: 05:00 às 20:00<br>
+              <p>Segunda a Sexta: 05:00 às 19:00<br>
               Sábados: 08:00 às 12:00</p>
             </div>
           </div>
@@ -1436,6 +1655,161 @@
 
   </div>
 
+  
+
+  
+  <div class="modal fade" id="modalCrossFit" tabindex="-1" role="dialog" aria-labelledby="modalCrossFitLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color: #973F1D; color: white;">
+          <h5 class="modal-title" id="modalCrossFitLabel">CrossFit</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Fechar" style="color: white;">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h6 style="color: #973F1D; font-weight: 600; margin-bottom: 15px;">O que oferece:</h6>
+          <ul style="margin-bottom: 25px;">
+            <li>Programa completo que combina força, condicionamento e ginástica funcional</li>
+            <li>Treinos variados (nunca repetitivos) que trabalham todas as capacidades físicas</li>
+            <li>Levantamento de Peso Olímpico (LPO) com técnica refinada</li>
+            <li>Ginástica funcional e movimentos com peso corporal</li>
+            <li>Desenvolvimento de mobilidade e flexibilidade</li>
+            <li>Comunidade acolhedora e inclusiva para todos os níveis</li>
+            <li>Aulas em turma com energia motivadora</li>
+          </ul>
+
+          <h6 style="color: #973F1D; font-weight: 600; margin-bottom: 15px;">O CrossFit é ideal para:</h6>
+          <ul>
+            <li><strong>Atletas</strong> — que buscam performance e desafios constantes</li>
+            <li><strong>Iniciantes</strong> — todos os treinos são escalonáveis e adaptáveis ao seu nível</li>
+            <li><strong>Pessoas que buscam condicionamento geral</strong> — força, resistência, agilidade e flexibilidade</li>
+            <li><strong>Quem gosta de variedade</strong> — treinos sempre diferentes e dinâmicos</li>
+            <li><strong>Quem valoriza comunidade</strong> — ambiente de apoio mútuo e motivação coletiva</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          <a href="https://wa.me/557191470787?text=Olá! Gostaria de saber mais sobre o CrossFit na Shed Cross!" class="btn btn-primary" target="_blank">Fale Conosco</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="modal fade" id="modalPersonalCross" tabindex="-1" role="dialog" aria-labelledby="modalPersonalCrossLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color: #973F1D; color: white;">
+          <h5 class="modal-title" id="modalPersonalCrossLabel">Personal Cross</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Fechar" style="color: white;">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h6 style="color: #973F1D; font-weight: 600; margin-bottom: 15px;">O que oferece:</h6>
+          <ul style="margin-bottom: 25px;">
+            <li>Treinos personalizados (força, condicionamento, técnica, mobilidade, etc.)</li>
+            <li>Correção detalhada de movimentos e foco em fundamentos</li>
+            <li>Acompanhamento de desempenho e evolução com métricas e feedbacks</li>
+            <li>Adaptação total a lesões, nível de condicionamento ou metas específicas</li>
+            <li>Flexibilidade de horário (o aluno escolhe quando treinar)</li>
+            <li>Atenção exclusiva do coach, o que aumenta segurança e resultados</li>
+          </ul>
+
+          <h6 style="color: #973F1D; font-weight: 600; margin-bottom: 15px;">O Personal Cross é ideal para:</h6>
+          <ul>
+            <li><strong>Iniciantes</strong> — que querem aprender a base antes de entrar em turmas</li>
+            <li><strong>Pessoas com lesões ou limitações físicas</strong> — que precisam de ajustes técnicos e controle de carga</li>
+            <li><strong>Pessoas com metas específicas</strong> — emagrecimento, ganho de massa, reabilitação, retorno pós-parto, etc.</li>
+            <li><strong>Alunos que preferem privacidade</strong> — ou não se adaptam bem ao ritmo de turma</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          <a href="https://wa.me/557191470787?text=Olá! Gostaria de saber mais sobre o Personal Cross na Shed Cross!" class="btn btn-primary" target="_blank">Fale Conosco</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="modal fade" id="modalCrossFitKids" tabindex="-1" role="dialog" aria-labelledby="modalCrossFitKidsLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color: #973F1D; color: white;">
+          <h5 class="modal-title" id="modalCrossFitKidsLabel">CrossFit Kids</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Fechar" style="color: white;">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h6 style="color: #973F1D; font-weight: 600; margin-bottom: 15px;">O que oferece:</h6>
+          <ul style="margin-bottom: 25px;">
+            <li>Aulas em turma com atividades lúdicas e divertidas</li>
+            <li>Desenvolvimento de coordenação motora e condicionamento físico</li>
+            <li>Movimentos funcionais adaptados para crianças</li>
+            <li>Trabalho em equipe e habilidades sociais</li>
+            <li>Foco na técnica correta desde cedo</li>
+            <li>Ambiente seguro e estimulante</li>
+            <li>Horários especiais pensados para a rotina das crianças</li>
+          </ul>
+
+          <h6 style="color: #973F1D; font-weight: 600; margin-bottom: 15px;">O CrossFit Kids é ideal para:</h6>
+          <ul>
+            <li><strong>Crianças ativas</strong> — que gostam de se movimentar e precisam gastar energia</li>
+            <li><strong>Desenvolvimento motor</strong> — crianças que precisam melhorar coordenação e força</li>
+            <li><strong>Socialização</strong> — crianças que se beneficiam de atividades em grupo</li>
+            <li><strong>Construção de hábitos saudáveis</strong> — desde a infância</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          <a href="https://wa.me/557191470787?text=Olá! Gostaria de saber mais sobre o CrossFit Kids na Shed Cross!" class="btn btn-primary" target="_blank">Fale Conosco</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="modal fade" id="modalIntervencao" tabindex="-1" role="dialog" aria-labelledby="modalIntervencaoLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color: #973F1D; color: white;">
+          <h5 class="modal-title" id="modalIntervencaoLabel">Intervenção Motora Infantil</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Fechar" style="color: white;">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h6 style="color: #973F1D; font-weight: 600; margin-bottom: 15px;">O que oferece:</h6>
+          <ul style="margin-bottom: 25px;">
+            <li>Atendimento individual e personalizado</li>
+            <li>Desenvolvimento motor especializado com metodologia adaptada</li>
+            <li>Abordagem ABA (Análise do Comportamento Aplicada) na psicomotricidade</li>
+            <li>Comunicação Aumentativa e Alternativa (CAA)</li>
+            <li>Propostas psicomotoras certificadas</li>
+            <li>Ambiente controlado e acolhedor em sala específica</li>
+            <li>Foco em marcos de desenvolvimento e necessidades individuais</li>
+            <li>Acompanhamento com "Tia Thay" - especialista em movimento infantil</li>
+          </ul>
+
+          <h6 style="color: #973F1D; font-weight: 600; margin-bottom: 15px;">A Intervenção Motora é ideal para:</h6>
+          <ul>
+            <li><strong>Crianças atípicas</strong> — com TEA (Transtorno do Espectro Autista), TDAH, atrasos no desenvolvimento</li>
+            <li><strong>Desenvolvimento motor específico</strong> — que precisam de trabalho individualizado</li>
+            <li><strong>Crianças que necessitam de abordagem sensorial</strong> — com dificuldades de integração sensorial</li>
+            <li><strong>Acompanhamento terapêutico complementar</strong> — que se beneficiam da intervenção motora junto a outras terapias</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          <a href="https://wa.me/557191470787?text=Olá! Gostaria de saber mais sobre a Intervenção Motora Infantil na Shed Cross!" class="btn btn-primary" target="_blank">Fale Conosco</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
   <script src="js/jquery-ui.js"></script>
@@ -1452,38 +1826,38 @@
   <script src="js/jquery.mb.YTPlayer.min.js"></script>
   <script src="js/main.js"></script>
   
-  <!-- Script de Filtro de Classes -->
+  
   <script>
   // Sistema de Filtros para Classes
   function initClassFilter() {
     console.log('Inicializando sistema de filtros...');
-    
+
     const filterButtons = document.querySelectorAll('.btn-filter');
-    const classItems = document.querySelectorAll('.class-item[data-category]');
-    
+    const classItems = document.querySelectorAll('.service-card[data-category]');
+
     console.log('Botões encontrados:', filterButtons.length);
     console.log('Items encontrados:', classItems.length);
-    
+
     if (filterButtons.length === 0) {
       console.error('Nenhum botão de filtro encontrado!');
       return;
     }
-    
+
     if (classItems.length === 0) {
       console.error('Nenhum item de classe encontrado!');
       return;
     }
-    
+
     // Função para filtrar itens
     function filterItems(filterValue) {
       console.log('Filtrando por:', filterValue);
-      
+
       classItems.forEach(function(item) {
         const category = item.getAttribute('data-category');
         const shouldShow = filterValue === 'all' || category === filterValue;
-        
+
         console.log(`Item categoria: ${category}, Mostrar: ${shouldShow}`);
-        
+
         if (shouldShow) {
           item.style.display = 'flex';
           item.style.opacity = '1';
@@ -1493,26 +1867,26 @@
         }
       });
     }
-    
+
     // Adicionar eventos aos botões
     filterButtons.forEach(function(button) {
       button.addEventListener('click', function(e) {
         e.preventDefault();
-        
+
         const filterValue = this.getAttribute('data-filter');
         console.log('Botão clicado, filtro:', filterValue);
-        
+
         // Remover classe active de todos os botões
         filterButtons.forEach(btn => btn.classList.remove('active'));
-        
+
         // Adicionar classe active ao botão clicado
         this.classList.add('active');
-        
+
         // Filtrar itens
         filterItems(filterValue);
       });
     });
-    
+
     // Inicializar com "all" ativo
     const allButton = document.querySelector('.btn-filter[data-filter="all"]');
     if (allButton && !allButton.classList.contains('active')) {
@@ -1530,7 +1904,7 @@
   }
   </script>
   
-  <!-- Script de Navegação Suave -->
+  
   <script>
   // Fix para navlinks - scroll suave com fallback
   document.addEventListener('DOMContentLoaded', function() {
