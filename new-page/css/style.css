@@ -32,7 +32,8 @@ body {
   line-height: 1.7;
   font-weight: 300;
   font-size: 1.1rem;
-  color: #989898; }
+  color: #989898;
+  background-color: #edede9; }
 
 ::-moz-selection {
   background: #000;
@@ -841,6 +842,9 @@ h1, h2, h3, h4, h5,
   color: #993516;
   font-size: 2.5rem;
   font-weight: 900; }
+
+.section-heading p {
+  color: #4a4a4a; }
 
 .class-item {
   border-radius: 4px;
