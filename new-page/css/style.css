@@ -1537,16 +1537,6 @@ h1, .heading {
 }
 
 .schedule-table tbody tr {
-  transition: all 0.3s ease;
-}
-
-.schedule-table tbody tr:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(151, 63, 29, 0.2);
-}
-
-.schedule-table tbody tr:nth-child(even) {
-  background-color: #f8f9fa;
 }
 
 .schedule-table td {
@@ -1558,31 +1548,35 @@ h1, .heading {
 
 .time-slot {
   background: #1A1A1A;
-  color: #C29765;
+  color: #1A1A1A;
   font-weight: 700;
   font-size: 1.1rem;
   letter-spacing: 1px;
   width: 100px;
   min-width: 80px;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  text-shadow: none;
 }
 
 .class-slot {
   position: relative;
   min-height: 70px;
   padding: 12px 8px;
+  background: #973F1D !important;
+  border: 2px solid #973F1D !important;
+  color: white !important;
+  font-weight: 600;
 }
 
 .class-slot.crossfit {
-  background: #973F1D;
-  border: 2px solid #973F1D;
-  color: white;
+  background: #973F1D !important;
+  border: 2px solid #973F1D !important;
+  color: white !important;
 }
 
 .class-slot.kids {
-  background: #973F1D;
-  border: 2px solid #973F1D;
-  color: white;
+  background: #973F1D !important;
+  border: 2px solid #973F1D !important;
+  color: white !important;
 }
 
 .class-info {
@@ -1612,14 +1606,6 @@ h1, .heading {
   font-size: 1.5rem;
   font-weight: 300;
   opacity: 0.6;
-}
-
-
-.class-slot:hover {
-  transform: scale(1.02);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  z-index: 10;
-  position: relative;
 }
 
 
@@ -1853,11 +1839,6 @@ h1, .heading {
   }
 }
 
-/* ========================================
-   CUSTOM STYLES - SHED CROSS
-   ======================================== */
-
-/* Estilo moderno para os cards de serviços */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -1964,7 +1945,6 @@ h1, .heading {
   transform: translateX(4px);
 }
 
-/* Cores por categoria */
 .service-card[data-category="crossfit"] .service-card-badge {
   background: #973F1D;
 }
@@ -1977,7 +1957,6 @@ h1, .heading {
   background: #C29765;
 }
 
-/* Ajuste dos botões de filtro */
 .filter-buttons {
   margin-bottom: 20px;
 }
@@ -2007,7 +1986,6 @@ h1, .heading {
   border-color: #973F1D;
 }
 
-/* Estilo dos Modais */
 .modal-header {
   border-bottom: none;
   padding: 30px 30px 20px;
@@ -2128,7 +2106,6 @@ h1, .heading {
   border-radius: 2px;
 }
 
-/* Botões de Horários Mobile */
 .schedule-mobile-buttons {
   display: flex !important;
   flex-direction: column;
@@ -2155,28 +2132,6 @@ h1, .heading {
   width: 100%;
 }
 
-.btn-schedule-mobile::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-  transition: left 0.5s ease;
-}
-
-.btn-schedule-mobile:hover::before {
-  left: 100%;
-}
-
-.btn-schedule-mobile:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(153, 53, 22, 0.35);
-  color: white;
-  text-decoration: none;
-}
-
 .btn-schedule-mobile:active {
   transform: translateY(-1px);
   box-shadow: 0 3px 10px rgba(153, 53, 22, 0.3);
@@ -2197,23 +2152,6 @@ h1, .heading {
   flex: 1;
   text-align: center;
 }
-
-.btn-schedule-mobile:hover i:last-child {
-  animation: bounce-right 0.6s ease infinite;
-}
-
-@keyframes bounce-right {
-  0%, 100% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(5px);
-  }
-}
-
-/* ========================================
-   RESPONSIVE STYLES
-   ======================================== */
 
 @media (max-width: 768px) {
   .services-grid {

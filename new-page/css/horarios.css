@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Muli', sans-serif;
+  background: #edede9;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.header {
+  background: linear-gradient(135deg, #973F1D 0%, #B8543A 100%);
+  padding: 25px 20px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 15px rgba(153, 53, 22, 0.25);
+}
+
+.header h1 {
+  color: white;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.header p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 14px;
+  text-align: center;
+  margin: 0;
+}
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: white;
+  color: #973F1D;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.back-button:active {
+  transform: translateY(1px);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.schedule-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.day-header {
+  background: #2A3622;
+  color: white;
+  padding: 12px 15px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+.time-slots {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.time-slot {
+  background: #973F1D;
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 16px;
+  box-shadow: 0 2px 8px rgba(153, 53, 22, 0.15);
+}
+
+.empty-slot {
+  background: #f8f9fa;
+  color: #999;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 16px;
+  border: 2px dashed #ddd;
+}
+
+.footer-info {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 25px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.footer-info h3 {
+  color: #973F1D;
+  font-size: 18px;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.footer-info p {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.contact-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #973F1D 0%, #B8543A 100%);
+  color: white;
+  padding: 15px 30px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  margin-top: 20px;
+  box-shadow: 0 4px 15px rgba(153, 53, 22, 0.25);
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.contact-button:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 8px rgba(153, 53, 22, 0.3);
+}
